@@ -1,23 +1,89 @@
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.min.css';
+import { Card } from 'antd';
+import { useState } from 'react';
+
+import classes from './App.module.css';
+
+import {
+  BarChart,
+  PieChart,
+  ScatterPlot,
+  SurfacePlot,
+  MixedSubplots,
+  MapDensity,
+  AnimatingPlot,
+} from './components';
+
+const tabListNoTitle = [
+  {
+    key: 'barChart',
+    tab: 'Bar Chart',
+  },
+  {
+    key: 'pieChart',
+    tab: 'Pie Chart',
+  },
+  {
+    key: 'scatterPlots',
+    tab: 'Scatter Plot',
+  },
+  {
+    key: 'surfacePlots',
+    tab: '3D Surface Plot',
+  },
+  {
+    key: 'mixedSubplots',
+    tab: 'Mixed Subplots',
+  },
+  {
+    key: 'mapDensity',
+    tab: 'Map Density',
+  },
+  {
+    key: 'animatingPlot',
+    tab: 'Animating Plot',
+  },
+];
+
+const contentListNoTitle = {
+  barChart: <BarChart />,
+  pieChart: <PieChart />,
+  scatterPlots: <ScatterPlot />,
+  surfacePlots: <SurfacePlot />,
+  mixedSubplots: <MixedSubplots />,
+  mapDensity: <MapDensity />,
+  animatingPlot: <AnimatingPlot />,
+};
 
 function App() {
+  const [activeTabKey, setActiveTabKey] = useState('barChart');
+
+  const onTabChange = (key) => {
+    setActiveTabKey(key);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className={classes['plot-wrapper']}>
+      <Card
+        tabList={tabListNoTitle}
+        activeTabKey={activeTabKey}
+        onTabChange={(key) => {
+          onTabChange(key);
+        }}
+        tabProps={{ centered: true }}
+      >
+        <Card.Grid
+          hoverable={false}
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          {contentListNoTitle[activeTabKey]}
+        </Card.Grid>
+      </Card>
     </div>
   );
 }
