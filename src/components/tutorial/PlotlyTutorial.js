@@ -3,15 +3,7 @@ import { useState } from 'react';
 
 import classes from './PlotlyTutorial.module.css';
 
-import {
-  BarChart,
-  PieChart,
-  ScatterPlot,
-  SurfacePlot,
-  MixedSubplots,
-  MapDensity,
-  AnimatingPlot,
-} from './index';
+import { BarChart, PieChart, ScatterPlot, SurfacePlot } from './index';
 
 const tabListNoTitle = [
   {
@@ -30,18 +22,6 @@ const tabListNoTitle = [
     key: 'surfacePlots',
     tab: '3D Surface Plot',
   },
-  {
-    key: 'mixedSubplots',
-    tab: 'Mixed Subplots',
-  },
-  {
-    key: 'mapDensity',
-    tab: 'Map Density',
-  },
-  {
-    key: 'animatingPlot',
-    tab: 'Animating Plot',
-  },
 ];
 
 const contentListNoTitle = {
@@ -49,9 +29,6 @@ const contentListNoTitle = {
   pieChart: <PieChart />,
   scatterPlots: <ScatterPlot />,
   surfacePlots: <SurfacePlot />,
-  mixedSubplots: <MixedSubplots />,
-  mapDensity: <MapDensity />,
-  animatingPlot: <AnimatingPlot />,
 };
 
 export default function PlotlyTutorial() {

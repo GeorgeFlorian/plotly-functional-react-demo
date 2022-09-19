@@ -3,8 +3,16 @@ import 'antd/dist/antd.min.css';
 import Demo from './components/praisDemo/Demo';
 
 function App() {
-  // return <PlotlyTutorial />;
-  return <Demo />;
+  return (
+    <>
+      {/* <div>
+        <PlotlyTutorial />
+      </div> */}
+      <div>
+        <Demo />
+      </div>
+    </>
+  );
 }
 
 export default App;

@@ -1,18 +1,13 @@
 import { countries, landDegradation } from './getData';
+import ChoroplethMap from './ChoroplethMap';
 
 export default function Demo() {
+  console.log(countries);
   console.log(landDegradation);
 
   return (
     <div>
-      {countries.map((country, index) => (
-        <div key={index}>
-          {`${index + 1} - ${country} - ${JSON.stringify(
-            landDegradation[index]
-          )}`}
-          <br />
-        </div>
-      ))}
+      <ChoroplethMap />
     </div>
   );
 }

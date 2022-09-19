@@ -8,6 +8,14 @@ export function PieChart() {
     layout: {
       showlegend: true,
       autosize: true,
+      margin: {
+        l: 10,
+        r: 10,
+        b: 40,
+        t: 40,
+        pad: 5,
+      },
+      legend: { x: 1.1, y: 0.5 },
     },
     frames: [],
     config: { responive: true },
