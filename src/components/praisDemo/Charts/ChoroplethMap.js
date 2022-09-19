@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { countries, landDegradation } from './getData';
+import { countries, landDegradation } from '../getData';
 
 export default function ChoroplethMap() {
   const [chart, setChart] = useState({
