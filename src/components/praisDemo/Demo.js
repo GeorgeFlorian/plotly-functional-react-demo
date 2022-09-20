@@ -27,7 +27,7 @@ const contentListNoTitle = {
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('stackedAreaChart');
+  const [activeTabKey, setActiveTabKey] = useState('gapminderChart');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);
