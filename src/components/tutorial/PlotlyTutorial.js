@@ -3,7 +3,13 @@ import { useState } from 'react';
 
 import classes from './PlotlyTutorial.module.css';
 
-import { BarChart, PieChart, ScatterPlot, SurfacePlot } from './index';
+import {
+  BarChart,
+  PieChart,
+  ScatterPlot,
+  SurfacePlot,
+  GapminderAnimation,
+} from './index';
 
 const tabListNoTitle = [
   {
@@ -22,6 +28,10 @@ const tabListNoTitle = [
     key: 'surfacePlots',
     tab: '3D Surface Plot',
   },
+  {
+    key: 'gapminderAnimation',
+    tab: 'Gapminder Animation',
+  },
 ];
 
 const contentListNoTitle = {
@@ -29,6 +39,7 @@ const contentListNoTitle = {
   pieChart: <PieChart />,
   scatterPlots: <ScatterPlot />,
   surfacePlots: <SurfacePlot />,
+  gapminderAnimation: <GapminderAnimation />,
 };
 
 export default function PlotlyTutorial() {

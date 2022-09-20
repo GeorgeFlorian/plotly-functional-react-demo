@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import * as d3 from 'd3';
 
-export function GapminderChart() {
+export function GapminderAnimation() {
   const [chart, setChart] = useState({
     data: [],
     layout: {
