@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import * as d3 from 'd3';
 import { gapminderChart } from '../../../helpers/getData';
+
+// To add custom hovertemplate for bubbles
+// https://plotly.com/javascript/hover-text-and-formatting/
 
 export function GapminderChart() {
   const [chart, setChart] = useState({
@@ -109,6 +111,7 @@ export function GapminderChart() {
             return getData(years[i], group);
           }),
         });
+        console.log(frames[i].data);
       }
 
       // Now create slider steps, one for each frame. The slider

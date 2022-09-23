@@ -1,28 +1,43 @@
 import barChartData from '../data/barChartData.json';
 import ALL_DATA from '../data/allData.json';
 
+const droughtType = {
+  non_drought: { name: 'Non Drought', color: '#a6ee4a' },
+  mild_drought: { name: 'Mild Drought', color: '#eee44a' },
+  moderate_drought: { name: 'Moderate Drought', color: '#f88502' },
+  severe_drought: { name: 'Severe Drought', color: '#f85500' },
+  extreme_drought: { name: 'Extreme Drought', color: '#c42a02' },
+};
+
+const sumAllObjectValues = (obj) => {
+  // console.log(Object.keys(obj));
+  if (Object.keys(obj).length !== 0)
+    return Object.values(obj).reduce((a, b) => Number(a) + Number(b));
+  return 0;
+};
+
+function percentage(partialValue, totalValue) {
+  const partial = Number(partialValue);
+  const total = Number(totalValue);
+  if (partial === 0 || total === 0) return 0;
+  return ((100 * partial) / total).toFixed(2);
+}
+
+const countries = Object.keys(ALL_DATA);
+
 // Data for Bar Chart (Degraded Land vs Non Degraded Land)
 const land = Object.keys(barChartData);
 export const landTypes = land.map((land) => barChartData[land]);
 
 // Data for Stacked Area Chart (drought types in time)
 export const stackedAreaChart = (country) => {
-  const droughtType = {
-    non_drought: { name: 'Non Drought', color: '#a6ee4a' },
-    mild_drought: { name: 'Mild Drought', color: '#eee44a' },
-    moderate_drought: { name: 'Moderate Drought', color: '#f88502' },
-    severe_drought: { name: 'Severe Drought', color: '#f85500' },
-    extreme_drought: { name: 'Extreme Drought', color: '#c42a02' },
-  };
-
-  const countries = Object.keys(ALL_DATA);
-  const countriesData = countries.reduce((obj, key) => {
+  const countriesLandDroughtByYear = countries.reduce((obj, key) => {
     if (ALL_DATA[key]['so3-1'])
       return { ...obj, [key]: [...ALL_DATA[key]['so3-1'].t1] };
     return { ...obj };
   }, {});
 
-  const cty = countriesData[country];
+  const cty = countriesLandDroughtByYear[country];
   console.log('cty', cty);
 
   const foo = Object.keys(droughtType).map((key) => ({
@@ -43,29 +58,17 @@ export const gapminderChart = () => {
   //   Object.entries(countriesData).sort(([, a], [, b]) => b - a)
   // );
 
-  function percentage(partialValue, totalValue) {
-    if (partialValue === 0 || totalValue === 0) return 0;
-    return ((100 * partialValue) / totalValue).toFixed(2);
-  }
-
-  const sumValues = (obj) => {
-    if (Object.keys(obj).length !== 0)
-      return Object.values(obj).reduce((a, b) => Number(a) + Number(b));
-    return 0;
-  };
-
   function between(x, min, max) {
     return x >= min && x <= max;
   }
 
-  const countries = Object.keys(ALL_DATA);
-  const groups = {
-    xl: 'Very large countries',
-    l: 'Large countries',
-    medium: 'Medium countries',
-    s: 'Small countries',
-    xs: 'Very small countries',
-  };
+  // const groups = {
+  //   xl: 'Very large countries',
+  //   l: 'Large countries',
+  //   medium: 'Medium countries',
+  //   s: 'Small countries',
+  //   xs: 'Very small countries',
+  // };
 
   const countriesData = countries.reduce((obj, key) => {
     const foo = {};
@@ -77,7 +80,7 @@ export const gapminderChart = () => {
         const { year, ...pop } = key;
         return {
           ...obj,
-          [key.year]: sumValues(pop),
+          [key.year]: sumAllObjectValues(pop),
         };
       }, {});
     foo[key].total_population = totalPopulationByYear
@@ -90,7 +93,7 @@ export const gapminderChart = () => {
         const { year, non_drought_population_count, ...pop } = key;
         return {
           ...obj,
-          [key.year]: sumValues(pop),
+          [key.year]: sumAllObjectValues(pop),
         };
       }, {});
     foo[key].pop_drought = totalPopAffectedByDroughtByYear
@@ -105,7 +108,7 @@ export const gapminderChart = () => {
         const { year, non_drought, ...drought } = key;
         return {
           ...obj,
-          [key.year]: sumValues(drought),
+          [key.year]: sumAllObjectValues(drought),
         };
       }, {});
     foo[key].total_land_drought = totalLandDrought ? totalLandDrought : 0;
@@ -173,4 +176,156 @@ export const gapminderChart = () => {
   }
 
   return everything;
+};
+
+export const butterflyChartData = (country) => {
+  const popDroughtByYear = countries.reduce((obj, key) => {
+    if (ALL_DATA[key]['so3-2'])
+      return {
+        ...obj,
+        [key]: {
+          totalPop: [...ALL_DATA[key]['so3-2'].t1],
+          femalePop: [...ALL_DATA[key]['so3-2'].t2],
+          malePop: [...ALL_DATA[key]['so3-2'].t3],
+        },
+      };
+    return { ...obj };
+  }, {});
+
+  const currentCountry = popDroughtByYear[country];
+  console.log(country, currentCountry);
+  const data = {};
+
+  // const getData = (data, populationType) => {
+  //   const foo = {};
+  //   for (const obj of data) {
+  //     const { year, non_drought_population_count, ...droughtAffectedPop } = obj;
+  //     const {
+  //       mild_drought_population_count,
+  //       moderate_drought_population_count,
+  //       severe_drought_population_count,
+  //       extreme_drought_population_count,
+  //     } = droughtAffectedPop;
+
+  //     const totalPop =
+  //       +non_drought_population_count + sumAllObjectValues(droughtAffectedPop);
+
+  //     if (!isNaN(totalPop))
+  //       foo[year] = {
+  //         [populationType]: {
+  //           totalPop: totalPop.toString(),
+  //           ...droughtAffectedPop,
+  //         },
+  //       };
+  //   }
+  //   return foo;
+  // };
+
+  // const totalPop = getData(currentCountry.totalPop, 'totalPop');
+  // const femalePop = getData(currentCountry.femalePop, 'femalePop');
+  // const malePop = getData(currentCountry.malePop, 'malePop');
+
+  // Get total population and affected by drought
+  for (const obj of currentCountry.totalPop) {
+    const { year, non_drought_population_count, ...droughtAffectedPop } = obj;
+    const {
+      mild_drought_population_count,
+      moderate_drought_population_count,
+      severe_drought_population_count,
+      extreme_drought_population_count,
+    } = droughtAffectedPop;
+
+    const totalPop =
+      +non_drought_population_count + sumAllObjectValues(droughtAffectedPop);
+
+    if (!isNaN(totalPop))
+      data[year] = {
+        totalPop: {
+          totalPop: totalPop.toString(),
+          ...droughtAffectedPop,
+        },
+      };
+  }
+  // Get female total population and affected by drought
+  for (const obj of currentCountry.femalePop) {
+    const { year, non_drought_population_count, ...droughtAffectedPop } = obj;
+    const {
+      mild_drought_population_count,
+      moderate_drought_population_count,
+      severe_drought_population_count,
+      extreme_drought_population_count,
+    } = droughtAffectedPop;
+
+    const totalPop =
+      +non_drought_population_count + sumAllObjectValues(droughtAffectedPop);
+
+    if (!isNaN(totalPop))
+      data[year] = {
+        ...data[year],
+        femalePop: {
+          totalPop: totalPop.toString(),
+          ...droughtAffectedPop,
+          non_drought_population_count,
+          nonDroughtPercentage: percentage(
+            non_drought_population_count,
+            totalPop
+          ),
+          mildPercentage: percentage(mild_drought_population_count, totalPop),
+          moderatePercentage: percentage(
+            moderate_drought_population_count,
+            totalPop
+          ),
+          severePercentage: percentage(
+            severe_drought_population_count,
+            totalPop
+          ),
+          extremePercentage: percentage(
+            extreme_drought_population_count,
+            totalPop
+          ),
+        },
+      };
+  }
+  // Get male total population and affected by drought
+  for (const obj of currentCountry.malePop) {
+    const { year, non_drought_population_count, ...droughtAffectedPop } = obj;
+    const {
+      mild_drought_population_count,
+      moderate_drought_population_count,
+      severe_drought_population_count,
+      extreme_drought_population_count,
+    } = droughtAffectedPop;
+
+    const totalPop =
+      +non_drought_population_count + sumAllObjectValues(droughtAffectedPop);
+
+    if (!isNaN(totalPop))
+      data[year] = {
+        ...data[year],
+        malePop: {
+          totalPop: totalPop.toString(),
+          ...droughtAffectedPop,
+          non_drought_population_count,
+          nonDroughtPercentage: percentage(
+            non_drought_population_count,
+            totalPop
+          ),
+          mildPercentage: percentage(mild_drought_population_count, totalPop),
+          moderatePercentage: percentage(
+            moderate_drought_population_count,
+            totalPop
+          ),
+          severePercentage: percentage(
+            severe_drought_population_count,
+            totalPop
+          ),
+          extremePercentage: percentage(
+            extreme_drought_population_count,
+            totalPop
+          ),
+        },
+      };
+  }
+
+  return data;
 };

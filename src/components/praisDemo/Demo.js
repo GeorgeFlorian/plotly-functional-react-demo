@@ -3,7 +3,12 @@ import { useState } from 'react';
 
 import classes from './Demo.module.css';
 
-import { BarChart, GapminderChart, StackedAreaChart } from './Charts/index';
+import {
+  BarChart,
+  GapminderChart,
+  StackedAreaChart,
+  ButterflyChart,
+} from './Charts/index';
 
 const tabListNoTitle = [
   {
@@ -18,16 +23,21 @@ const tabListNoTitle = [
     key: 'gapminderChart',
     tab: 'Gapminder Chart',
   },
+  {
+    key: 'butterflychart',
+    tab: 'Butterfly Chart',
+  },
 ];
 
 const contentListNoTitle = {
   barChart: <BarChart />,
   stackedAreaChart: <StackedAreaChart />,
   gapminderChart: <GapminderChart />,
+  butterflychart: <ButterflyChart />,
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('gapminderChart');
+  const [activeTabKey, setActiveTabKey] = useState('butterflychart');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);
