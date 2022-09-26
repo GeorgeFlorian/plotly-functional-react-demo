@@ -8,7 +8,10 @@ import {
   GapminderChart,
   StackedAreaChart,
   ButterflyChart,
+  SunburstChart,
+  TreeMap,
 } from './Charts/index';
+import Column from 'antd/lib/table/Column';
 
 const tabListNoTitle = [
   {
@@ -24,8 +27,16 @@ const tabListNoTitle = [
     tab: 'Gapminder Chart',
   },
   {
-    key: 'butterflychart',
+    key: 'butterflyChart',
     tab: 'Butterfly Chart',
+  },
+  {
+    key: 'sunburst',
+    tab: 'Sunburst Chart',
+  },
+  {
+    key: 'treeMap',
+    tab: 'Tree Map',
   },
 ];
 
@@ -33,11 +44,13 @@ const contentListNoTitle = {
   barChart: <BarChart />,
   stackedAreaChart: <StackedAreaChart />,
   gapminderChart: <GapminderChart />,
-  butterflychart: <ButterflyChart />,
+  butterflyChart: <ButterflyChart />,
+  sunburst: <SunburstChart />,
+  treeMap: <TreeMap />,
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('butterflychart');
+  const [activeTabKey, setActiveTabKey] = useState('sunburst');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);
@@ -58,6 +71,7 @@ export default function PlotlyTutorial() {
           style={{
             width: '100%',
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
           }}

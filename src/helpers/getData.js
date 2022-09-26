@@ -37,6 +37,8 @@ export const stackedAreaChart = (country) => {
     return { ...obj };
   }, {});
 
+  console.log(countriesLandDroughtByYear);
+
   const cty = countriesLandDroughtByYear[country];
   console.log('cty', cty);
 
@@ -228,12 +230,12 @@ export const butterflyChartData = (country) => {
   // Get total population and affected by drought
   for (const obj of currentCountry.totalPop) {
     const { year, non_drought_population_count, ...droughtAffectedPop } = obj;
-    const {
-      mild_drought_population_count,
-      moderate_drought_population_count,
-      severe_drought_population_count,
-      extreme_drought_population_count,
-    } = droughtAffectedPop;
+    // const {
+    //   mild_drought_population_count,
+    //   moderate_drought_population_count,
+    //   severe_drought_population_count,
+    //   extreme_drought_population_count,
+    // } = droughtAffectedPop;
 
     const totalPop =
       +non_drought_population_count + sumAllObjectValues(droughtAffectedPop);
@@ -329,3 +331,5 @@ export const butterflyChartData = (country) => {
 
   return data;
 };
+
+const sunburstData = () => {};
