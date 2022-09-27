@@ -1,0 +1,374 @@
+
+{
+    "count": 25,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 26,
+            "code": 1,
+            "name": "Africa",
+            "countries": []
+        },
+        {
+            "id": 40,
+            "code": 18,
+            "name": "Andean",
+            "countries": [
+                "Bolivia (Plurinational State of)",
+                "Colombia",
+                "Ecuador",
+                "Peru",
+                "Venezuela (Bolivarian Republic of)"
+            ]
+        },
+        {
+            "id": 22,
+            "code": 2,
+            "name": "Asia",
+            "countries": []
+        },
+        {
+            "id": 32,
+            "code": 19,
+            "name": "Caribbean",
+            "countries": [
+                "Antigua and Barbuda",
+                "Bahamas",
+                "Barbados",
+                "Cuba",
+                "Dominica",
+                "Dominican Republic",
+                "Grenada",
+                "Guyana",
+                "Haiti",
+                "Jamaica",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Vincent and the Grenadines",
+                "Suriname",
+                "Trinidad and Tobago"
+            ]
+        },
+        {
+            "id": 41,
+            "code": 4,
+            "name": "Central Africa",
+            "countries": [
+                "Burundi",
+                "Cameroon",
+                "Central African Republic",
+                "Chad",
+                "Congo",
+                "Democratic Republic of the Congo",
+                "Equatorial Guinea",
+                "Gabon",
+                "Rwanda",
+                "Sao Tome and Principe"
+            ]
+        },
+        {
+            "id": 45,
+            "code": 13,
+            "name": "Central Asia",
+            "countries": [
+                "Kazakhstan",
+                "Kyrgyzstan",
+                "Tajikistan",
+                "Turkmenistan",
+                "Uzbekistan"
+            ]
+        },
+        {
+            "id": 34,
+            "code": 5,
+            "name": "Central and Eastern Europe",
+            "countries": []
+        },
+        {
+            "id": 43,
+            "code": 14,
+            "name": "East Asia",
+            "countries": [
+                "China",
+                "Democratic People's Republic of Korea",
+                "Mongolia",
+                "Republic of Korea"
+            ]
+        },
+        {
+            "id": 44,
+            "code": 5,
+            "name": "Eastern Africa",
+            "countries": [
+                "Comoros",
+                "Djibouti",
+                "Eritrea",
+                "Ethiopia",
+                "Kenya",
+                "Somalia",
+                "South Sudan",
+                "Sudan",
+                "Uganda"
+            ]
+        },
+        {
+            "id": 31,
+            "code": 3,
+            "name": "Latin America and the Caribbean",
+            "countries": []
+        },
+        {
+            "id": 38,
+            "code": 16,
+            "name": "Mesoamerica",
+            "countries": [
+                "Belize",
+                "Costa Rica",
+                "El Salvador",
+                "Guatemala",
+                "Honduras",
+                "Mexico",
+                "Nicaragua",
+                "Panama"
+            ]
+        },
+        {
+            "id": 28,
+            "code": 6,
+            "name": "No region",
+            "countries": []
+        },
+        {
+            "id": 29,
+            "code": 1,
+            "name": "No subregion",
+            "countries": [
+                "Andorra",
+                "Austria",
+                "Belgium",
+                "Brunei Darussalam",
+                "Canada",
+                "Czechia",
+                "Denmark",
+                "Finland",
+                "France",
+                "Germany",
+                "Holy See",
+                "Iceland",
+                "Ireland",
+                "Japan",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Maldives",
+                "Monaco",
+                "Netherlands",
+                "New Zealand",
+                "Norway",
+                "Poland",
+                "San Marino",
+                "Sweden",
+                "Switzerland",
+                "United Kingdom of Great Britain and Northern Ireland",
+                "United States of America"
+            ]
+        },
+        {
+            "id": 35,
+            "code": 1,
+            "name": "No subregion",
+            "countries": [
+                "Armenia",
+                "Azerbaijan",
+                "Belarus",
+                "Bosnia and Herzegovina",
+                "Bulgaria",
+                "Estonia",
+                "Georgia",
+                "Latvia",
+                "Montenegro",
+                "Republic of Moldova",
+                "Republic of North Macedonia",
+                "Romania",
+                "Russian Federation",
+                "Serbia",
+                "Slovakia",
+                "Ukraine"
+            ]
+        },
+        {
+            "id": 25,
+            "code": 1,
+            "name": "No subregion",
+            "countries": [
+                "Albania",
+                "Croatia",
+                "Cyprus",
+                "Greece",
+                "Hungary",
+                "Israel",
+                "Italy",
+                "Malta",
+                "Portugal",
+                "Slovenia",
+                "Spain",
+                "Turkey"
+            ]
+        },
+        {
+            "id": 27,
+            "code": 9,
+            "name": "Northern Africa",
+            "countries": [
+                "Algeria",
+                "Egypt",
+                "Libya",
+                "Mauritania",
+                "Morocco",
+                "Tunisia"
+            ]
+        },
+        {
+            "id": 24,
+            "code": 4,
+            "name": "Northern Mediterranean",
+            "countries": []
+        },
+        {
+            "id": 36,
+            "code": 12,
+            "name": "Pacific",
+            "countries": [
+                "Australia",
+                "Cook Islands",
+                "Fiji",
+                "Kiribati",
+                "Marshall Islands",
+                "Micronesia (Federated States of)",
+                "Nauru",
+                "Niue",
+                "Palau",
+                "Papua New Guinea",
+                "Samoa",
+                "Solomon Islands",
+                "Tonga",
+                "Tuvalu",
+                "Vanuatu"
+            ]
+        },
+        {
+            "id": 23,
+            "code": 15,
+            "name": "South Asia",
+            "countries": [
+                "Afghanistan",
+                "Bangladesh",
+                "Bhutan",
+                "India",
+                "Nepal",
+                "Pakistan",
+                "Sri Lanka"
+            ]
+        },
+        {
+            "id": 33,
+            "code": 17,
+            "name": "South Cone",
+            "countries": [
+                "Argentina",
+                "Brazil",
+                "Chile",
+                "Paraguay",
+                "Uruguay"
+            ]
+        },
+        {
+            "id": 42,
+            "code": 10,
+            "name": "South East Asia",
+            "countries": [
+                "Cambodia",
+                "Indonesia",
+                "Lao People's Democratic Republic",
+                "Malaysia",
+                "Myanmar",
+                "Philippines",
+                "Singapore",
+                "Thailand",
+                "Timor-Leste",
+                "Viet Nam"
+            ]
+        },
+        {
+            "id": 30,
+            "code": 6,
+            "name": "Southern Africa",
+            "countries": [
+                "Angola",
+                "Botswana",
+                "Eswatini",
+                "Lesotho",
+                "Madagascar",
+                "Malawi",
+                "Mauritius",
+                "Mozambique",
+                "Namibia",
+                "Seychelles",
+                "South Africa",
+                "United Republic of Tanzania",
+                "Zambia",
+                "Zimbabwe"
+            ]
+        },
+        {
+            "id": 37,
+            "code": 11,
+            "name": "West Asia",
+            "countries": [
+                "Bahrain",
+                "Iran (Islamic Republic of)",
+                "Iraq",
+                "Jordan",
+                "Kuwait",
+                "Lebanon",
+                "Oman",
+                "Qatar",
+                "Saudi Arabia",
+                "Syrian Arab Republic",
+                "United Arab Emirates",
+                "Yemen"
+            ]
+        },
+        {
+            "id": 46,
+            "code": 2,
+            "name": "West Asia",
+            "countries": [
+                "State of Palestine"
+            ]
+        },
+        {
+            "id": 39,
+            "code": 7,
+            "name": "Western Africa",
+            "countries": [
+                "Benin",
+                "Burkina Faso",
+                "Cabo Verde",
+                "Côte d'Ivoire",
+                "Gambia",
+                "Ghana",
+                "Guinea",
+                "Guinea-Bissau",
+                "Liberia",
+                "Mali",
+                "Niger",
+                "Nigeria",
+                "Senegal",
+                "Sierra Leone",
+                "Togo"
+            ]
+        }
+    ]
+}

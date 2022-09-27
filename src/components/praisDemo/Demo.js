@@ -11,7 +11,6 @@ import {
   SunburstChart,
   TreeMap,
 } from './Charts/index';
-import Column from 'antd/lib/table/Column';
 
 const tabListNoTitle = [
   {

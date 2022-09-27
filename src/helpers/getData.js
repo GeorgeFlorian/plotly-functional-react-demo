@@ -1,14 +1,6 @@
 import barChartData from '../data/barChartData.json';
 import ALL_DATA from '../data/allData.json';
 
-const droughtType = {
-  non_drought: { name: 'Non Drought', color: '#a6ee4a' },
-  mild_drought: { name: 'Mild Drought', color: '#eee44a' },
-  moderate_drought: { name: 'Moderate Drought', color: '#f88502' },
-  severe_drought: { name: 'Severe Drought', color: '#f85500' },
-  extreme_drought: { name: 'Extreme Drought', color: '#c42a02' },
-};
-
 const sumAllObjectValues = (obj) => {
   // console.log(Object.keys(obj));
   if (Object.keys(obj).length !== 0)
@@ -29,32 +21,6 @@ const countries = Object.keys(ALL_DATA);
 const land = Object.keys(barChartData);
 export const landTypes = land.map((land) => barChartData[land]);
 
-// Data for Stacked Area Chart (drought types in time)
-export const stackedAreaChart = (country) => {
-  const countriesLandDroughtByYear = countries.reduce((obj, key) => {
-    if (ALL_DATA[key]['so3-1'])
-      return { ...obj, [key]: [...ALL_DATA[key]['so3-1'].t1] };
-    return { ...obj };
-  }, {});
-
-  console.log(countriesLandDroughtByYear);
-
-  const cty = countriesLandDroughtByYear[country];
-  console.log('cty', cty);
-
-  const foo = Object.keys(droughtType).map((key) => ({
-    x: cty.map((country) => country.year),
-    y: cty.map((country) => country[key]),
-    stackgroup: 'one',
-    name: droughtType[key].name,
-    fillcolor: droughtType[key].color,
-    line: { color: '#fff' },
-    textfont: { color: '#000' },
-  }));
-
-  return { data: foo, layout: { title: country } };
-};
-
 export const gapminderChart = () => {
   // const sortable = Object.fromEntries(
   //   Object.entries(countriesData).sort(([, a], [, b]) => b - a)
@@ -63,14 +29,6 @@ export const gapminderChart = () => {
   function between(x, min, max) {
     return x >= min && x <= max;
   }
-
-  // const groups = {
-  //   xl: 'Very large countries',
-  //   l: 'Large countries',
-  //   medium: 'Medium countries',
-  //   s: 'Small countries',
-  //   xs: 'Very small countries',
-  // };
 
   const countriesData = countries.reduce((obj, key) => {
     const foo = {};
@@ -148,7 +106,7 @@ export const gapminderChart = () => {
 
   // country, year, log(pop), group, X axis: percentage of land affected by drought, Y axis: percentage of population affected by drought
 
-  // array push { country, year, pop, continent, lifeExp, gdpPercap }
+  // array push { country, year, pop, group, percentage_land_drought, percentage_pop_drought }
   const everything = [];
   for (const country in countriesData) {
     for (let i = 0; i < years.length; i++) {
@@ -333,3 +291,96 @@ export const butterflyChartData = (country) => {
 };
 
 const sunburstData = () => {};
+
+// Q3 - State of Drought across the world
+// Q5 Population exposed to drought and gender differences in exposure
+
+const getAllCountries = () => {
+  return Object.keys(ALL_DATA);
+};
+
+// const allCountries = getAllCountries();
+
+// return an object with all the countries containing all types of land_drought
+// organized by years (2000 - 2019)
+const getAllCountriesLandDroughtByYear = () => {
+  return countries.reduce((obj, key) => {
+    if (ALL_DATA[key]['so3-1'])
+      return { ...obj, [key]: [...ALL_DATA[key]['so3-1'].t1] };
+    return { ...obj };
+  }, {});
+};
+
+const getCountryLandDroughtByYear = (country) => {
+  const countries = getAllCountriesLandDroughtByYear();
+  return countries[country];
+};
+
+const getAllCountriesTotalPopulationByYear = () => {
+  return countries.reduce((obj, key) => {
+    if (ALL_DATA[key]['so3-2'])
+      return {
+        ...obj,
+        [key]: {
+          ...ALL_DATA[key]['so3-2'].t1.reduce((obj, key) => {
+            const { year, ...pop } = key;
+            return {
+              ...obj,
+              [key.year]: sumAllObjectValues(pop),
+            };
+          }, {}),
+        },
+      };
+    return { ...obj };
+  }, {});
+};
+
+const getCountryTotalPopulationByYear = (country) => {
+  const countries = getAllCountriesTotalPopulationByYear();
+  return countries[country];
+};
+
+const endpoints = {
+  getAllCountries,
+  getAllCountriesLandDroughtByYear,
+  getCountryLandDroughtByYear,
+  getAllCountriesTotalPopulationByYear,
+  getCountryTotalPopulationByYear,
+};
+
+// Data for Stacked Area Chart (drought types in time)
+// Land area affected by different types of drought
+export const stackedAreaChart = (country) => {
+  const cty = endpoints
+    .getCountryLandDroughtByYear(country)
+    // filter objects that have only the year property
+    .filter((el) => Object.keys(el).length > 1);
+  // get the years that contain data
+  const years = cty.reduce((array, val) => [...array, val.year], []);
+
+  const droughtType = {
+    non_drought: { name: 'Non Drought', color: '#a6ee4a' },
+    mild_drought: { name: 'Mild Drought', color: '#eee44a' },
+    moderate_drought: { name: 'Moderate Drought', color: '#f88502' },
+    severe_drought: { name: 'Severe Drought', color: '#f85500' },
+    extreme_drought: { name: 'Extreme Drought', color: '#c42a02' },
+  };
+
+  const foo = Object.keys(droughtType).map((key) => ({
+    x: cty.map((country) => country.year),
+    y: cty.map((country) => country[key]),
+    stackgroup: 'one',
+    name: droughtType[key].name,
+    fillcolor: droughtType[key].color,
+    line: { color: '#fff' },
+    textfont: { color: '#000' },
+  }));
+
+  return {
+    data: foo,
+    layout: {
+      title: country,
+      xaxis: { tickvals: years.filter((year) => year % 2 === 0) },
+    },
+  };
+};
