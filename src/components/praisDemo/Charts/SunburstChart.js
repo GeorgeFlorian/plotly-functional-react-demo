@@ -71,6 +71,10 @@ const DEFAULT_STATE = {
         1, 1, 1,
       ],
       leaf: { opacity: 0.5 },
+      hovertemplate:
+        '%{parent} %{label} : %{value} <br>' +
+        ' %{entry} <br>' +
+        '<extra></extra>',
       marker: {
         line: { width: 2 },
         colorscale: 'Greens',
@@ -170,6 +174,10 @@ const MILD_DROUGHT = {
         1, 1, 1,
       ],
       leaf: { opacity: 0.5 },
+      hovertemplate:
+        '%{parent} %{label} : %{value} <br>' +
+        ' %{entry} <br>' +
+        '<extra></extra>',
       marker: {
         line: { width: 2 },
         colorscale: 'Blues',

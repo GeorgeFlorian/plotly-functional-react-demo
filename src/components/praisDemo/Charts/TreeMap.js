@@ -70,6 +70,7 @@ const DEFAULT_STATE = {
         25, 4, 5, 6, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1,
       ],
+      textinfo: 'label+value+percent parent+percent entry',
       leaf: { opacity: 0.5 },
       marker: {
         line: { width: 2 },
@@ -168,6 +169,7 @@ const MILD_DROUGHT = {
         25, 6, 5, 4, 5, 5, 1, 2, 1, 2, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1,
         1, 1, 1,
       ],
+      textinfo: 'label+value+percent parent+percent entry',
       leaf: { opacity: 0.5 },
       marker: {
         line: { width: 2 },
