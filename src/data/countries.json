@@ -1,0 +1,1520 @@
+[
+  {
+    "id": "zxkXG8Z",
+    "name": "Afghanistan",
+    "iso3": "AFG",
+    "m49": 4
+  },
+  {
+    "id": "nVmw2kN",
+    "name": "Albania",
+    "iso3": "ALB",
+    "m49": 8
+  },
+  {
+    "id": "dWmnO3M",
+    "name": "Algeria",
+    "iso3": "DZA",
+    "m49": 12
+  },
+  {
+    "id": "dWmq23G",
+    "name": "American Samoa",
+    "iso3": "ASM",
+    "m49": 16
+  },
+  {
+    "id": "OL8JM3Y",
+    "name": "Andorra",
+    "iso3": "AND",
+    "m49": 20
+  },
+  {
+    "id": "xb3x98g",
+    "name": "Angola",
+    "iso3": "AGO",
+    "m49": 24
+  },
+  {
+    "id": "RV8Lg3x",
+    "name": "Anguilla",
+    "iso3": "AIA",
+    "m49": 660
+  },
+  {
+    "id": "Jdk4z3P",
+    "name": "Antarctica",
+    "iso3": "ATA",
+    "m49": 10
+  },
+  {
+    "id": "vx31Wk9",
+    "name": "Antigua and Barbuda",
+    "iso3": "ATG",
+    "m49": 28
+  },
+  {
+    "id": "LdkrGmM",
+    "name": "Argentina",
+    "iso3": "ARG",
+    "m49": 32
+  },
+  {
+    "id": "Rz37QkB",
+    "name": "Armenia",
+    "iso3": "ARM",
+    "m49": 51
+  },
+  {
+    "id": "PB3zLkd",
+    "name": "Aruba",
+    "iso3": "ABW",
+    "m49": 533
+  },
+  {
+    "id": "wM3Aj8p",
+    "name": "Australia",
+    "iso3": "AUS",
+    "m49": 36
+  },
+  {
+    "id": "DE3P182",
+    "name": "Austria",
+    "iso3": "AUT",
+    "m49": 40
+  },
+  {
+    "id": "QP8pZmv",
+    "name": "Azerbaijan",
+    "iso3": "AZE",
+    "m49": 31
+  },
+  {
+    "id": "Jw3bK8e",
+    "name": "Bahamas",
+    "iso3": "BHS",
+    "m49": 44
+  },
+  {
+    "id": "OP3aJ8q",
+    "name": "Bahrain",
+    "iso3": "BHR",
+    "m49": 48
+  },
+  {
+    "id": "wY8yomD",
+    "name": "Bangladesh",
+    "iso3": "BGD",
+    "m49": 50
+  },
+  {
+    "id": "ONkY9kr",
+    "name": "Barbados",
+    "iso3": "BRB",
+    "m49": 52
+  },
+  {
+    "id": "xX32Qmb",
+    "name": "Belarus",
+    "iso3": "BLR",
+    "m49": 112
+  },
+  {
+    "id": "K739gkb",
+    "name": "Belgium",
+    "iso3": "BEL",
+    "m49": 56
+  },
+  {
+    "id": "Ax3098a",
+    "name": "Belize",
+    "iso3": "BLZ",
+    "m49": 84
+  },
+  {
+    "id": "QxkeZmM",
+    "name": "Benin",
+    "iso3": "BEN",
+    "m49": 204
+  },
+  {
+    "id": "GM3NO8l",
+    "name": "Bermuda",
+    "iso3": "BMU",
+    "m49": 60
+  },
+  {
+    "id": "AV8vxmR",
+    "name": "Bhutan",
+    "iso3": "BTN",
+    "m49": 64
+  },
+  {
+    "id": "PMk6zkb",
+    "name": "Bolivia (Plurinational State of)",
+    "iso3": "BOL",
+    "m49": 68
+  },
+  {
+    "id": "QymZd8E",
+    "name": "Bonaire, Sint Eustatius and Saba",
+    "iso3": "BES",
+    "m49": 535
+  },
+  {
+    "id": "zdmE0ke",
+    "name": "Bosnia and Herzegovina",
+    "iso3": "BIH",
+    "m49": 70
+  },
+  {
+    "id": "MV8BokP",
+    "name": "Botswana",
+    "iso3": "BWA",
+    "m49": 72
+  },
+  {
+    "id": "e9kVl3b",
+    "name": "Bouvet Island",
+    "iso3": "BVT",
+    "m49": 74
+  },
+  {
+    "id": "w93G6ml",
+    "name": "Brazil",
+    "iso3": "BRA",
+    "m49": 76
+  },
+  {
+    "id": "XWkl9m1",
+    "name": "British Indian Ocean Territory",
+    "iso3": "IOT",
+    "m49": 86
+  },
+  {
+    "id": "zxkgGk6",
+    "name": "British Virgin Islands",
+    "iso3": "VGB",
+    "m49": 92
+  },
+  {
+    "id": "eZmo18r",
+    "name": "Brunei Darussalam",
+    "iso3": "BRN",
+    "m49": 96
+  },
+  {
+    "id": "MPkQ6mq",
+    "name": "Bulgaria",
+    "iso3": "BGR",
+    "m49": 100
+  },
+  {
+    "id": "yW3jv3Y",
+    "name": "Burkina Faso",
+    "iso3": "BFA",
+    "m49": 854
+  },
+  {
+    "id": "XL8R53v",
+    "name": "Burundi",
+    "iso3": "BDI",
+    "m49": 108
+  },
+  {
+    "id": "Yw3DOmR",
+    "name": "Cabo Verde",
+    "iso3": "CPV",
+    "m49": 132
+  },
+  {
+    "id": "rVkMZma",
+    "name": "Cambodia",
+    "iso3": "KHM",
+    "m49": 116
+  },
+  {
+    "id": "1e8Kb3W",
+    "name": "Cameroon",
+    "iso3": "CMR",
+    "m49": 120
+  },
+  {
+    "id": "1zkWe3e",
+    "name": "Canada",
+    "iso3": "CAN",
+    "m49": 124
+  },
+  {
+    "id": "a285Y8e",
+    "name": "Cayman Islands",
+    "iso3": "CYM",
+    "m49": 136
+  },
+  {
+    "id": "63OqWkq",
+    "name": "Central African Republic",
+    "iso3": "CAF",
+    "m49": 140
+  },
+  {
+    "id": "xkXGG8Z",
+    "name": "Chad",
+    "iso3": "TCD",
+    "m49": 148
+  },
+  {
+    "id": "zmdxvmv",
+    "name": "Channel Islands",
+    "iso3": null,
+    "m49": 830
+  },
+  {
+    "id": "VmwZ2kN",
+    "name": "Chile",
+    "iso3": "CHL",
+    "m49": 152
+  },
+  {
+    "id": "Wmn0O8M",
+    "name": "China",
+    "iso3": "CHN",
+    "m49": 156
+  },
+  {
+    "id": "WmqB23G",
+    "name": "China, Hong Kong Special Administrative Region",
+    "iso3": "HKG",
+    "m49": 344
+  },
+  {
+    "id": "L8JWMkY",
+    "name": "China, Macao Special Administrative Region",
+    "iso3": "MAC",
+    "m49": 446
+  },
+  {
+    "id": "b3xZ9kg",
+    "name": "Christmas Island",
+    "iso3": "CXR",
+    "m49": 162
+  },
+  {
+    "id": "V8LYgkx",
+    "name": "Cocos (Keeling) Islands",
+    "iso3": "CCK",
+    "m49": 166
+  },
+  {
+    "id": "dk4Kz8P",
+    "name": "Colombia",
+    "iso3": "COL",
+    "m49": 170
+  },
+  {
+    "id": "x31QW39",
+    "name": "Comoros",
+    "iso3": "COM",
+    "m49": 174
+  },
+  {
+    "id": "dkrjGkM",
+    "name": "Congo",
+    "iso3": "COG",
+    "m49": 178
+  },
+  {
+    "id": "z37EQkB",
+    "name": "Cook Islands",
+    "iso3": "COK",
+    "m49": 184
+  },
+  {
+    "id": "B3zdLkd",
+    "name": "Costa Rica",
+    "iso3": "CRI",
+    "m49": 188
+  },
+  {
+    "id": "E3Pg1m2",
+    "name": "Croatia",
+    "iso3": "HRV",
+    "m49": 191
+  },
+  {
+    "id": "P8p2Zmv",
+    "name": "Cuba",
+    "iso3": "CUB",
+    "m49": 192
+  },
+  {
+    "id": "w3bpKke",
+    "name": "Curaçao",
+    "iso3": "CUW",
+    "m49": 531
+  },
+  {
+    "id": "P3aaJ3q",
+    "name": "Cyprus",
+    "iso3": "CYP",
+    "m49": 196
+  },
+  {
+    "id": "Y8yKomD",
+    "name": "Czechia",
+    "iso3": "CZE",
+    "m49": 203
+  },
+  {
+    "id": "M3A4jmp",
+    "name": "Côte d'Ivoire",
+    "iso3": "CIV",
+    "m49": 384
+  },
+  {
+    "id": "NkYy9kr",
+    "name": "Democratic People's Republic of Korea",
+    "iso3": "PRK",
+    "m49": 408
+  },
+  {
+    "id": "X32pQkb",
+    "name": "Democratic Republic of the Congo",
+    "iso3": "COD",
+    "m49": 180
+  },
+  {
+    "id": "739Ogkb",
+    "name": "Denmark",
+    "iso3": "DNK",
+    "m49": 208
+  },
+  {
+    "id": "x30o9ma",
+    "name": "Djibouti",
+    "iso3": "DJI",
+    "m49": 262
+  },
+  {
+    "id": "xkeLZ8M",
+    "name": "Dominica",
+    "iso3": "DMA",
+    "m49": 212
+  },
+  {
+    "id": "M3N4Okl",
+    "name": "Dominican Republic",
+    "iso3": "DOM",
+    "m49": 214
+  },
+  {
+    "id": "V8vax3R",
+    "name": "Ecuador",
+    "iso3": "ECU",
+    "m49": 218
+  },
+  {
+    "id": "Mk6Ez8b",
+    "name": "Egypt",
+    "iso3": "EGY",
+    "m49": 818
+  },
+  {
+    "id": "ymZzdmE",
+    "name": "El Salvador",
+    "iso3": "SLV",
+    "m49": 222
+  },
+  {
+    "id": "dmEK08e",
+    "name": "Equatorial Guinea",
+    "iso3": "GNQ",
+    "m49": 226
+  },
+  {
+    "id": "V8BZo8P",
+    "name": "Eritrea",
+    "iso3": "ERI",
+    "m49": 232
+  },
+  {
+    "id": "9kVBlkb",
+    "name": "Estonia",
+    "iso3": "EST",
+    "m49": 233
+  },
+  {
+    "id": "93GG63l",
+    "name": "Eswatini",
+    "iso3": "SWZ",
+    "m49": 748
+  },
+  {
+    "id": "Wkl19m1",
+    "name": "Ethiopia",
+    "iso3": "ETH",
+    "m49": 231
+  },
+  {
+    "id": "xkgrG86",
+    "name": "European Union",
+    "iso3": "EUE",
+    "m49": null
+  },
+  {
+    "id": "Zmoz1kr",
+    "name": "Falkland Islands (Malvinas)",
+    "iso3": "FLK",
+    "m49": 238
+  },
+  {
+    "id": "PkQY6kq",
+    "name": "Faroe Islands",
+    "iso3": "FRO",
+    "m49": 234
+  },
+  {
+    "id": "W3jevmY",
+    "name": "Fiji",
+    "iso3": "FJI",
+    "m49": 242
+  },
+  {
+    "id": "L8Rq53v",
+    "name": "Finland",
+    "iso3": "FIN",
+    "m49": 246
+  },
+  {
+    "id": "w3DZOkR",
+    "name": "France",
+    "iso3": "FRA",
+    "m49": 250
+  },
+  {
+    "id": "VkMLZ8a",
+    "name": "French Guiana",
+    "iso3": "GUF",
+    "m49": 254
+  },
+  {
+    "id": "e8KNb3W",
+    "name": "French Polynesia",
+    "iso3": "PYF",
+    "m49": 258
+  },
+  {
+    "id": "zkWgeke",
+    "name": "French Southern and Antarctic Territories",
+    "iso3": "ATF",
+    "m49": 260
+  },
+  {
+    "id": "285aY8e",
+    "name": "Gabon",
+    "iso3": "GAB",
+    "m49": 266
+  },
+  {
+    "id": "63O6Wmq",
+    "name": "Gambia",
+    "iso3": "GMB",
+    "m49": 270
+  },
+  {
+    "id": "xkXEGmZ",
+    "name": "Georgia",
+    "iso3": "GEO",
+    "m49": 268
+  },
+  {
+    "id": "zmdvv8v",
+    "name": "Germany",
+    "iso3": "DEU",
+    "m49": 276
+  },
+  {
+    "id": "VmwJ2kN",
+    "name": "Ghana",
+    "iso3": "GHA",
+    "m49": 288
+  },
+  {
+    "id": "WmnMOkM",
+    "name": "Gibraltar",
+    "iso3": "GIB",
+    "m49": 292
+  },
+  {
+    "id": "WmqE2mG",
+    "name": "Greece",
+    "iso3": "GRC",
+    "m49": 300
+  },
+  {
+    "id": "L8JQM3Y",
+    "name": "Greenland",
+    "iso3": "GRL",
+    "m49": 304
+  },
+  {
+    "id": "b3xO9mg",
+    "name": "Grenada",
+    "iso3": "GRD",
+    "m49": 308
+  },
+  {
+    "id": "V8L4g8x",
+    "name": "Guadeloupe",
+    "iso3": "GLP",
+    "m49": 312
+  },
+  {
+    "id": "dk4bz3P",
+    "name": "Guam",
+    "iso3": "GUM",
+    "m49": 316
+  },
+  {
+    "id": "x31vW89",
+    "name": "Guatemala",
+    "iso3": "GTM",
+    "m49": 320
+  },
+  {
+    "id": "dkrnGkM",
+    "name": "Guernsey",
+    "iso3": "GGY",
+    "m49": 831
+  },
+  {
+    "id": "63O6jmq",
+    "name": "Guinea",
+    "iso3": "GIN",
+    "m49": 324
+  },
+  {
+    "id": "xkXEemZ",
+    "name": "Guinea-Bissau",
+    "iso3": "GNB",
+    "m49": 624
+  },
+  {
+    "id": "zmdvz8v",
+    "name": "Guyana",
+    "iso3": "GUY",
+    "m49": 328
+  },
+  {
+    "id": "VmwJnkN",
+    "name": "Haiti",
+    "iso3": "HTI",
+    "m49": 332
+  },
+  {
+    "id": "WmnMjkM",
+    "name": "Heard Island and McDonald Islands",
+    "iso3": "HMD",
+    "m49": 334
+  },
+  {
+    "id": "WmqExmG",
+    "name": "Holy See",
+    "iso3": "VAT",
+    "m49": 336
+  },
+  {
+    "id": "L8JQX3Y",
+    "name": "Honduras",
+    "iso3": "HND",
+    "m49": 340
+  },
+  {
+    "id": "b3xOamg",
+    "name": "Hungary",
+    "iso3": "HUN",
+    "m49": 348
+  },
+  {
+    "id": "V8L4P8x",
+    "name": "Iceland",
+    "iso3": "ISL",
+    "m49": 352
+  },
+  {
+    "id": "dk4bl3P",
+    "name": "India",
+    "iso3": "IND",
+    "m49": 356
+  },
+  {
+    "id": "x31vg89",
+    "name": "Indonesia",
+    "iso3": "IDN",
+    "m49": 360
+  },
+  {
+    "id": "dkrn6kM",
+    "name": "Iran (Islamic Republic of)",
+    "iso3": "IRN",
+    "m49": 364
+  },
+  {
+    "id": "z37nPmB",
+    "name": "Iraq",
+    "iso3": "IRQ",
+    "m49": 368
+  },
+  {
+    "id": "B3zVy3d",
+    "name": "Ireland",
+    "iso3": "IRL",
+    "m49": 372
+  },
+  {
+    "id": "M3AoJkp",
+    "name": "Isle of Man",
+    "iso3": "IMN",
+    "m49": 833
+  },
+  {
+    "id": "E3PwDm2",
+    "name": "Israel",
+    "iso3": "ISR",
+    "m49": 376
+  },
+  {
+    "id": "P8pQekv",
+    "name": "Italy",
+    "iso3": "ITA",
+    "m49": 380
+  },
+  {
+    "id": "w3b203e",
+    "name": "Jamaica",
+    "iso3": "JAM",
+    "m49": 388
+  },
+  {
+    "id": "P3aYX3q",
+    "name": "Japan",
+    "iso3": "JPN",
+    "m49": 392
+  },
+  {
+    "id": "Y8yXj3D",
+    "name": "Jersey",
+    "iso3": "JEY",
+    "m49": 832
+  },
+  {
+    "id": "NkYGz3r",
+    "name": "Jordan",
+    "iso3": "JOR",
+    "m49": 400
+  },
+  {
+    "id": "X32PBkb",
+    "name": "Kazakhstan",
+    "iso3": "KAZ",
+    "m49": 398
+  },
+  {
+    "id": "739EY3b",
+    "name": "Kenya",
+    "iso3": "KEN",
+    "m49": 404
+  },
+  {
+    "id": "x30lb3a",
+    "name": "Kiribati",
+    "iso3": "KIR",
+    "m49": 296
+  },
+  {
+    "id": "xkejrmM",
+    "name": "Kosovo",
+    "iso3": null,
+    "m49": 412
+  },
+  {
+    "id": "M3N5oml",
+    "name": "Kuwait",
+    "iso3": "KWT",
+    "m49": 414
+  },
+  {
+    "id": "V8vql3R",
+    "name": "Kyrgyzstan",
+    "iso3": "KGZ",
+    "m49": 417
+  },
+  {
+    "id": "Mk6nNkb",
+    "name": "Lao People's Democratic Republic",
+    "iso3": "LAO",
+    "m49": 418
+  },
+  {
+    "id": "ymZrXmE",
+    "name": "Latvia",
+    "iso3": "LVA",
+    "m49": 428
+  },
+  {
+    "id": "dmE2r3e",
+    "name": "Lebanon",
+    "iso3": "LBN",
+    "m49": 422
+  },
+  {
+    "id": "V8B153P",
+    "name": "Lesotho",
+    "iso3": "LSO",
+    "m49": 426
+  },
+  {
+    "id": "9kVyO8b",
+    "name": "Liberia",
+    "iso3": "LBR",
+    "m49": 430
+  },
+  {
+    "id": "93GWj3l",
+    "name": "Libya",
+    "iso3": "LBY",
+    "m49": 434
+  },
+  {
+    "id": "Wkl2131",
+    "name": "Liechtenstein",
+    "iso3": "LIE",
+    "m49": 438
+  },
+  {
+    "id": "xkgpqm6",
+    "name": "Lithuania",
+    "iso3": "LTU",
+    "m49": 440
+  },
+  {
+    "id": "ZmoQQ8r",
+    "name": "Luxembourg",
+    "iso3": "LUX",
+    "m49": 442
+  },
+  {
+    "id": "PkQx78q",
+    "name": "Madagascar",
+    "iso3": "MDG",
+    "m49": 450
+  },
+  {
+    "id": "W3jKE8Y",
+    "name": "Malawi",
+    "iso3": "MWI",
+    "m49": 454
+  },
+  {
+    "id": "L8RgLkv",
+    "name": "Malaysia",
+    "iso3": "MYS",
+    "m49": 458
+  },
+  {
+    "id": "w3D67kR",
+    "name": "Maldives",
+    "iso3": "MDV",
+    "m49": 462
+  },
+  {
+    "id": "VkMOj3a",
+    "name": "Mali",
+    "iso3": "MLI",
+    "m49": 466
+  },
+  {
+    "id": "e8KWL8W",
+    "name": "Malta",
+    "iso3": "MLT",
+    "m49": 470
+  },
+  {
+    "id": "zkWZq8e",
+    "name": "Marshall Islands",
+    "iso3": "MHL",
+    "m49": 584
+  },
+  {
+    "id": "285vNke",
+    "name": "Martinique",
+    "iso3": "MTQ",
+    "m49": 474
+  },
+  {
+    "id": "63Odj8q",
+    "name": "Mauritania",
+    "iso3": "MRT",
+    "m49": 478
+  },
+  {
+    "id": "xkXyemZ",
+    "name": "Mauritius",
+    "iso3": "MUS",
+    "m49": 480
+  },
+  {
+    "id": "zmdpzmv",
+    "name": "Mayotte",
+    "iso3": "MYT",
+    "m49": 175
+  },
+  {
+    "id": "Vmw2nkN",
+    "name": "Mexico",
+    "iso3": "MEX",
+    "m49": 484
+  },
+  {
+    "id": "WmnbjmM",
+    "name": "Micronesia (Federated States of)",
+    "iso3": "FSM",
+    "m49": 583
+  },
+  {
+    "id": "WmqOx8G",
+    "name": "Monaco",
+    "iso3": "MCO",
+    "m49": 492
+  },
+  {
+    "id": "L8J9X3Y",
+    "name": "Mongolia",
+    "iso3": "MNG",
+    "m49": 496
+  },
+  {
+    "id": "b3xGamg",
+    "name": "Montenegro",
+    "iso3": "MNE",
+    "m49": 499
+  },
+  {
+    "id": "V8LZPmx",
+    "name": "Montserrat",
+    "iso3": "MSR",
+    "m49": 500
+  },
+  {
+    "id": "dk4Bl3P",
+    "name": "Morocco",
+    "iso3": "MAR",
+    "m49": 504
+  },
+  {
+    "id": "x31Dgm9",
+    "name": "Mozambique",
+    "iso3": "MOZ",
+    "m49": 508
+  },
+  {
+    "id": "dkrX63M",
+    "name": "Myanmar",
+    "iso3": "MMR",
+    "m49": 104
+  },
+  {
+    "id": "z372PmB",
+    "name": "Namibia",
+    "iso3": "NAM",
+    "m49": 516
+  },
+  {
+    "id": "B3zKy8d",
+    "name": "Nauru",
+    "iso3": "NRU",
+    "m49": 520
+  },
+  {
+    "id": "M3AGJkp",
+    "name": "Nepal",
+    "iso3": "NPL",
+    "m49": 524
+  },
+  {
+    "id": "E3PBDk2",
+    "name": "Netherlands",
+    "iso3": "NLD",
+    "m49": 528
+  },
+  {
+    "id": "P8pge3v",
+    "name": "Netherlands Antilles",
+    "iso3": null,
+    "m49": 530
+  },
+  {
+    "id": "w3bq0me",
+    "name": "New Caledonia",
+    "iso3": "NCL",
+    "m49": 540
+  },
+  {
+    "id": "P3ajX8q",
+    "name": "New Zealand",
+    "iso3": "NZL",
+    "m49": 554
+  },
+  {
+    "id": "Y8yZjkD",
+    "name": "Nicaragua",
+    "iso3": "NIC",
+    "m49": 558
+  },
+  {
+    "id": "NkYqzkr",
+    "name": "Niger",
+    "iso3": "NER",
+    "m49": 562
+  },
+  {
+    "id": "X32WB8b",
+    "name": "Nigeria",
+    "iso3": "NGA",
+    "m49": 566
+  },
+  {
+    "id": "739XYmb",
+    "name": "Niue",
+    "iso3": "NIU",
+    "m49": 570
+  },
+  {
+    "id": "x304b3a",
+    "name": "Norfolk Island",
+    "iso3": "NFK",
+    "m49": 574
+  },
+  {
+    "id": "M3NXokl",
+    "name": "Northern Mariana Islands",
+    "iso3": "MNP",
+    "m49": 580
+  },
+  {
+    "id": "V8vQl3R",
+    "name": "Norway",
+    "iso3": "NOR",
+    "m49": 578
+  },
+  {
+    "id": "Mk6KNmb",
+    "name": "Oman",
+    "iso3": "OMN",
+    "m49": 512
+  },
+  {
+    "id": "ymZJXmE",
+    "name": "Pakistan",
+    "iso3": "PAK",
+    "m49": 586
+  },
+  {
+    "id": "dmE6r3e",
+    "name": "Palau",
+    "iso3": "PLW",
+    "m49": 585
+  },
+  {
+    "id": "V8B258P",
+    "name": "Panama",
+    "iso3": "PAN",
+    "m49": 591
+  },
+  {
+    "id": "9kVQO8b",
+    "name": "Papua New Guinea",
+    "iso3": "PNG",
+    "m49": 598
+  },
+  {
+    "id": "93GPj8l",
+    "name": "Paraguay",
+    "iso3": "PRY",
+    "m49": 600
+  },
+  {
+    "id": "WklQ1m1",
+    "name": "Peru",
+    "iso3": "PER",
+    "m49": 604
+  },
+  {
+    "id": "xkg1q36",
+    "name": "Philippines",
+    "iso3": "PHL",
+    "m49": 608
+  },
+  {
+    "id": "ZmoXQ3r",
+    "name": "Pitcairn",
+    "iso3": "PCN",
+    "m49": 612
+  },
+  {
+    "id": "PkQ773q",
+    "name": "Poland",
+    "iso3": "POL",
+    "m49": 616
+  },
+  {
+    "id": "W3j5EmY",
+    "name": "Portugal",
+    "iso3": "PRT",
+    "m49": 620
+  },
+  {
+    "id": "L8R2L8v",
+    "name": "Puerto Rico",
+    "iso3": "PRI",
+    "m49": 630
+  },
+  {
+    "id": "w3DY78R",
+    "name": "Qatar",
+    "iso3": "QAT",
+    "m49": 634
+  },
+  {
+    "id": "VkM1jka",
+    "name": "Republic of Korea",
+    "iso3": "KOR",
+    "m49": 410
+  },
+  {
+    "id": "e8KRL3W",
+    "name": "Republic of Moldova",
+    "iso3": "MDA",
+    "m49": 498
+  },
+  {
+    "id": "xkeyrkM",
+    "name": "Republic of North Macedonia",
+    "iso3": "MKD",
+    "m49": 807
+  },
+  {
+    "id": "285wNme",
+    "name": "Romania",
+    "iso3": "ROU",
+    "m49": 642
+  },
+  {
+    "id": "63O7j3q",
+    "name": "Russian Federation",
+    "iso3": "RUS",
+    "m49": 643
+  },
+  {
+    "id": "xkXre3Z",
+    "name": "Rwanda",
+    "iso3": "RWA",
+    "m49": 646
+  },
+  {
+    "id": "zkWGqke",
+    "name": "Réunion",
+    "iso3": "REU",
+    "m49": 638
+  },
+  {
+    "id": "zmddzmv",
+    "name": "Saint Barthélemy",
+    "iso3": "BLM",
+    "m49": 652
+  },
+  {
+    "id": "VmwMn8N",
+    "name": "Saint Helena",
+    "iso3": "SHN",
+    "m49": 654
+  },
+  {
+    "id": "WmnOj3M",
+    "name": "Saint Kitts and Nevis",
+    "iso3": "KNA",
+    "m49": 659
+  },
+  {
+    "id": "Wmqwx8G",
+    "name": "Saint Lucia",
+    "iso3": "LCA",
+    "m49": 662
+  },
+  {
+    "id": "L8JqX3Y",
+    "name": "Saint Martin (French Part)",
+    "iso3": "MAF",
+    "m49": 663
+  },
+  {
+    "id": "b3x0a3g",
+    "name": "Saint Pierre and Miquelon",
+    "iso3": "SPM",
+    "m49": 666
+  },
+  {
+    "id": "V8LMPkx",
+    "name": "Saint Vincent and the Grenadines",
+    "iso3": "VCT",
+    "m49": 670
+  },
+  {
+    "id": "dk4dlkP",
+    "name": "Samoa",
+    "iso3": "WSM",
+    "m49": 882
+  },
+  {
+    "id": "x31lgm9",
+    "name": "San Marino",
+    "iso3": "SMR",
+    "m49": 674
+  },
+  {
+    "id": "dkr26kM",
+    "name": "Sao Tome and Principe",
+    "iso3": "STP",
+    "m49": 678
+  },
+  {
+    "id": "63O7P3q",
+    "name": "Sark",
+    "iso3": null,
+    "m49": 680
+  },
+  {
+    "id": "xkXr13Z",
+    "name": "Saudi Arabia",
+    "iso3": "SAU",
+    "m49": 682
+  },
+  {
+    "id": "zmddRmv",
+    "name": "Senegal",
+    "iso3": "SEN",
+    "m49": 686
+  },
+  {
+    "id": "VmwMe8N",
+    "name": "Serbia",
+    "iso3": "SRB",
+    "m49": 688
+  },
+  {
+    "id": "WmnO93M",
+    "name": "Seychelles",
+    "iso3": "SYC",
+    "m49": 690
+  },
+  {
+    "id": "Wmqw48G",
+    "name": "Sierra Leone",
+    "iso3": "SLE",
+    "m49": 694
+  },
+  {
+    "id": "L8Jqo3Y",
+    "name": "Singapore",
+    "iso3": "SGP",
+    "m49": 702
+  },
+  {
+    "id": "b3x0j3g",
+    "name": "Sint Maarten (Dutch part)",
+    "iso3": "SXM",
+    "m49": 534
+  },
+  {
+    "id": "V8LMOkx",
+    "name": "Slovakia",
+    "iso3": "SVK",
+    "m49": 703
+  },
+  {
+    "id": "dk4dGkP",
+    "name": "Slovenia",
+    "iso3": "SVN",
+    "m49": 705
+  },
+  {
+    "id": "x31l5m9",
+    "name": "Solomon Islands",
+    "iso3": "SLB",
+    "m49": 90
+  },
+  {
+    "id": "dkr25kM",
+    "name": "Somalia",
+    "iso3": "SOM",
+    "m49": 706
+  },
+  {
+    "id": "z37qXkB",
+    "name": "South Africa",
+    "iso3": "ZAF",
+    "m49": 710
+  },
+  {
+    "id": "B3zQqmd",
+    "name": "South Georgia and the South Sandwich Islands",
+    "iso3": "SGS",
+    "m49": 239
+  },
+  {
+    "id": "M3APamp",
+    "name": "South Sudan",
+    "iso3": "SSD",
+    "m49": 728
+  },
+  {
+    "id": "E3PR7k2",
+    "name": "Spain",
+    "iso3": "ESP",
+    "m49": 724
+  },
+  {
+    "id": "P8pd08v",
+    "name": "Sri Lanka",
+    "iso3": "LKA",
+    "m49": 144
+  },
+  {
+    "id": "w3bOM8e",
+    "name": "State of Palestine",
+    "iso3": "PSE",
+    "m49": 275
+  },
+  {
+    "id": "P3aNg8q",
+    "name": "Sudan",
+    "iso3": "SDN",
+    "m49": 729
+  },
+  {
+    "id": "Y8y063D",
+    "name": "Suriname",
+    "iso3": "SUR",
+    "m49": 740
+  },
+  {
+    "id": "NkYB1mr",
+    "name": "Svalbard and Jan Mayen Islands",
+    "iso3": "SJM",
+    "m49": 744
+  },
+  {
+    "id": "X32Dpkb",
+    "name": "Sweden",
+    "iso3": "SWE",
+    "m49": 752
+  },
+  {
+    "id": "739jE8b",
+    "name": "Switzerland",
+    "iso3": "CHE",
+    "m49": 756
+  },
+  {
+    "id": "x3024ka",
+    "name": "Syrian Arab Republic",
+    "iso3": "SYR",
+    "m49": 760
+  },
+  {
+    "id": "xkeKw3M",
+    "name": "Tajikistan",
+    "iso3": "TJK",
+    "m49": 762
+  },
+  {
+    "id": "M3Nnn3l",
+    "name": "Thailand",
+    "iso3": "THA",
+    "m49": 764
+  },
+  {
+    "id": "V8vYL3R",
+    "name": "Timor-Leste",
+    "iso3": "TLS",
+    "m49": 626
+  },
+  {
+    "id": "Mk67vmb",
+    "name": "Togo",
+    "iso3": "TGO",
+    "m49": 768
+  },
+  {
+    "id": "ymZ0K8E",
+    "name": "Tokelau",
+    "iso3": "TKL",
+    "m49": 772
+  },
+  {
+    "id": "dmEOd8e",
+    "name": "Tonga",
+    "iso3": "TON",
+    "m49": 776
+  },
+  {
+    "id": "V8BP6mP",
+    "name": "Trinidad and Tobago",
+    "iso3": "TTO",
+    "m49": 780
+  },
+  {
+    "id": "9kVd23b",
+    "name": "Tunisia",
+    "iso3": "TUN",
+    "m49": 788
+  },
+  {
+    "id": "93GdB8l",
+    "name": "Turkey",
+    "iso3": "TUR",
+    "m49": 792
+  },
+  {
+    "id": "WklEAm1",
+    "name": "Turkmenistan",
+    "iso3": "TKM",
+    "m49": 795
+  },
+  {
+    "id": "xkgKYk6",
+    "name": "Turks and Caicos Islands",
+    "iso3": "TCA",
+    "m49": 796
+  },
+  {
+    "id": "Zmogrmr",
+    "name": "Tuvalu",
+    "iso3": "TUV",
+    "m49": 798
+  },
+  {
+    "id": "PkQBjmq",
+    "name": "Uganda",
+    "iso3": "UGA",
+    "m49": 800
+  },
+  {
+    "id": "W3jEOmY",
+    "name": "Ukraine",
+    "iso3": "UKR",
+    "m49": 804
+  },
+  {
+    "id": "L8RV48v",
+    "name": "United Arab Emirates",
+    "iso3": "ARE",
+    "m49": 784
+  },
+  {
+    "id": "w3DrGkR",
+    "name": "United Kingdom of Great Britain and Northern Ireland",
+    "iso3": "GBR",
+    "m49": 826
+  },
+  {
+    "id": "VkMwp3a",
+    "name": "United Republic of Tanzania",
+    "iso3": "TZA",
+    "m49": 834
+  },
+  {
+    "id": "285AM8e",
+    "name": "United States Virgin Islands",
+    "iso3": "VIR",
+    "m49": 850
+  },
+  {
+    "id": "e8KX1kW",
+    "name": "United States minor outlying islands",
+    "iso3": "UMI",
+    "m49": 581
+  },
+  {
+    "id": "zkWwJke",
+    "name": "United States of America",
+    "iso3": "USA",
+    "m49": 840
+  },
+  {
+    "id": "63O1Pkq",
+    "name": "Uruguay",
+    "iso3": "URY",
+    "m49": 858
+  },
+  {
+    "id": "xkX51mZ",
+    "name": "Uzbekistan",
+    "iso3": "UZB",
+    "m49": 860
+  },
+  {
+    "id": "zmdKRkv",
+    "name": "Vanuatu",
+    "iso3": "VUT",
+    "m49": 548
+  },
+  {
+    "id": "VmwvekN",
+    "name": "Venezuela (Bolivarian Republic of)",
+    "iso3": "VEN",
+    "m49": 862
+  },
+  {
+    "id": "WmnE9kM",
+    "name": "Viet Nam",
+    "iso3": "VNM",
+    "m49": 704
+  },
+  {
+    "id": "Wmq243G",
+    "name": "Wallis and Futuna Islands",
+    "iso3": "WLF",
+    "m49": 876
+  },
+  {
+    "id": "L8JOokY",
+    "name": "Western Sahara",
+    "iso3": "ESH",
+    "m49": 732
+  },
+  {
+    "id": "b3xvjkg",
+    "name": "Yemen",
+    "iso3": "YEM",
+    "m49": 887
+  },
+  {
+    "id": "V8LdO8x",
+    "name": "Zambia",
+    "iso3": "ZMB",
+    "m49": 894
+  },
+  {
+    "id": "dk4EGmP",
+    "name": "Zimbabwe",
+    "iso3": "ZWE",
+    "m49": 716
+  },
+  {
+    "id": "Gzmdv8v",
+    "name": "Åland Islands",
+    "iso3": "ALA",
+    "m49": 248
+  }
+]

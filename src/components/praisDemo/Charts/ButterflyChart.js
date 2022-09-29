@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { butterflyChartData } from '../../../helpers/getData';
+import { butterflyChartData } from '../../../helpers/fooData';
 
 // Select country: https://plotly.com/javascript/dropdowns/
 

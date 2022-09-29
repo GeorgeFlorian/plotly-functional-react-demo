@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 
-import { landTypes } from '../../../helpers/getData';
+import { landTypes } from '../../../helpers/fooData';
+import { doSomething } from '../../../helpers/getData';
 
 export function BarChart() {
   const [chart, setChart] = useState({
@@ -33,7 +34,7 @@ export function BarChart() {
       };
     });
 
-    console.log(data);
+    // console.log(data);
 
     setChart((prevState) => ({
       data: [...data],

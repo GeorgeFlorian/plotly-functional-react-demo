@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { gapminderChart } from '../../../helpers/getData';
+import { gapminderChart } from '../../../helpers/fooData';
 
 // To add custom hovertemplate for bubbles
 // https://plotly.com/javascript/hover-text-and-formatting/
@@ -62,8 +62,8 @@ export function GapminderChart() {
         // console.log('trace', trace);
         trace.text.push(datum.country);
         trace.id.push(datum.country);
-        trace.x.push(datum.percentage_land_drought);
-        trace.y.push(datum.percentage_pop_drought);
+        trace.x.push(datum.land_drought_percentage);
+        trace.y.push(datum.population_drought_percentage);
         trace.marker.size.push(datum.pop);
         // console.log(trace);
       }
