@@ -49,7 +49,7 @@ const contentListNoTitle = {
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('sunburst');
+  const [activeTabKey, setActiveTabKey] = useState('barChart');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);
@@ -73,6 +73,7 @@ export default function PlotlyTutorial() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
+            minHeight: 600,
           }}
         >
           {contentListNoTitle[activeTabKey]}

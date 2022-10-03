@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { doSomething } from '../../../helpers/getData';
+import { createSunburstChart } from '../../../helpers/getData';
 
 // second plot with repeated labels
 // Regions -> Drought class -> countries
@@ -9,68 +9,10 @@ const DEFAULT_DATA = [
   {
     type: 'sunburst',
     sort: false,
-    // labels: [
-    //   'WES',
-    //   'AAP',
-    //   'CEE',
-    //   'LAC',
-    //   'AFR',
-
-    //   'FRA',
-    //   'AUS',
-    //   'CAN',
-    //   'USA',
-    //   'CHN',
-    //   'IND',
-    //   'KAZ',
-    //   'SAU',
-    //   'IDN',
-    //   'RUS',
-    //   'UKR',
-    //   'BRA',
-    //   'ARG',
-    //   'MEX',
-    //   'PER',
-    //   'COL',
-    //   'DZA',
-    //   'COD',
-    //   'SDN',
-    //   'LBY',
-    //   'TCD',
-    // ],
-    // parents: [
-    //   '',
-    //   '',
-    //   '',
-    //   '',
-    //   '',
-    //   'WES',
-    //   'WES',
-    //   'WES',
-    //   'WES',
-    //   'AAP',
-    //   'AAP',
-    //   'AAP',
-    //   'AAP',
-    //   'AAP',
-    //   'CEE',
-    //   'CEE',
-    //   'LAC',
-    //   'LAC',
-    //   'LAC',
-    //   'LAC',
-    //   'LAC',
-    //   'AFR',
-    //   'AFR',
-    //   'AFR',
-    //   'AFR',
-    //   'AFR',
-    // ],
     // values: [
     //   4, 5, 6, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
     //   1,
     // ],
-    leaf: { opacity: 0.5 },
     // hovertemplate:
     //   '%{parent} %{label} : %{value} <br>' +
     //   ' %{entry} <br>' +
@@ -116,7 +58,7 @@ export function SunburstChart() {
       },
       autosize: true,
       margin: { l: 0, r: 0, b: 0, t: 0 },
-      width: 1000,
+      width: 900,
       height: 800,
     },
     frames: [],
@@ -124,7 +66,7 @@ export function SunburstChart() {
   });
 
   useEffect(() => {
-    const data = doSomething();
+    const data = createSunburstChart();
 
     setChart((prevState) => ({
       data: [{ ...DEFAULT_DATA[0], ...data }],

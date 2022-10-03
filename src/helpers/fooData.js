@@ -1,4 +1,3 @@
-import barChartData from '../data/barChartData.json';
 import ALL_DATA from '../data/allData.json';
 
 const sumAllObjectValues = (obj) => {
@@ -16,10 +15,6 @@ function percentage(partialValue, totalValue) {
 }
 
 const countries = Object.keys(ALL_DATA);
-
-// Data for Bar Chart (Degraded Land vs Non Degraded Land)
-const land = Object.keys(barChartData);
-export const landTypes = land.map((land) => barChartData[land]);
 
 export const gapminderChart = () => {
   // const sortable = Object.fromEntries(
