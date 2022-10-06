@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
-import { stackedAreaChart } from '../../../helpers/fooData';
+import { stackedAreaChartEndpoint } from '../../../helpers/getData';
 
 export function StackedAreaChart() {
   const [chart, setChart] = useState({
@@ -18,10 +18,11 @@ export function StackedAreaChart() {
   });
 
   useEffect(() => {
-    const plot = stackedAreaChart('AFG');
+    const plot = stackedAreaChartEndpoint();
+    console.log('plot', plot);
 
     setChart((prevState) => ({
-      data: [...plot.data],
+      data: [...plot],
       layout: { ...prevState.layout, ...plot.layout },
     }));
   }, [setChart]);

@@ -49,7 +49,7 @@ const contentListNoTitle = {
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('barChart');
+  const [activeTabKey, setActiveTabKey] = useState('stackedAreaChart');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);

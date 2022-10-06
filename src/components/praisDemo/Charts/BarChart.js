@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 
-import { createBarChart } from '../../../helpers/getData';
+import { barChartEndpoint } from '../../../helpers/getData';
 
 export function BarChart() {
   const [chart, setChart] = useState({
@@ -26,7 +26,7 @@ export function BarChart() {
   useEffect(() => {
     // get Percentage of degraded land in each region
     // Percentage non-degraded land = 100 - Percentage of degraded land in each region
-    const myData = createBarChart();
+    const myData = barChartEndpoint();
     console.log(myData);
 
     const degradedLand = {

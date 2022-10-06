@@ -389,14 +389,14 @@ const endpoints = {
 // Data for Stacked Area Chart (drought types in time)
 // Land area affected by different types of drought
 export const stackedAreaChart = (country) => {
-  console.log(getAllCountriesLandDroughtByYear());
+  // console.log(getAllCountriesLandDroughtByYear());
   const cty = endpoints
     .getCountryLandDroughtByYear(country)
     // filter objects that have only the year property
     .filter((el) => Object.keys(el).length > 1);
   // get the years that contain data
   const years = cty.reduce((array, val) => [...array, val.year], []);
-  console.log('cty', cty);
+  // console.log('cty', cty);
 
   const droughtType = {
     non_drought: { name: 'Non Drought', color: '#a6ee4a' },
