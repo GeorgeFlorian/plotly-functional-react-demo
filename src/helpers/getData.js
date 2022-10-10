@@ -159,34 +159,34 @@ export const stackedAreaChartEndpoint = () => {
 
     // console.log(region.name, regionTotal);
 
-    const newFoo = {
-      [region.name]: Object.keys(regionTotal).map((year) => {
-        const foo = Object.keys(regionTotal[year]).reduce((total, drought) => {
-          if (drought === 'total_land_area') return total;
-          total.push({
-            year: year,
-            class: droughtType[drought].name,
-            percentage: Number(
-              regionTotal[year][drought] / regionTotal[year].total_land_area
-            ).toFixed(2),
-          });
-          return total;
-        }, []);
-        return foo;
-      }),
-    };
+    const newFoo = Object.keys(regionTotal).map((year) => {
+      const foo = Object.keys(regionTotal[year]).reduce((total, drought) => {
+        if (drought === 'total_land_area') return total;
+        total.push({
+          year: year,
+          class: droughtType[drought].name,
+          percentage: Number(
+            regionTotal[year][drought] / regionTotal[year].total_land_area
+          ).toFixed(2),
+        });
+        return total;
+      }, []);
+      return foo;
+    });
 
-    // console.log('newFoo', Object.values(newFoo)[0].flat());
+    // newFoo is an array made of arrays each containing 5 objects: each drought class per year
+    console.log(newFoo);
 
     acc.push({
       code: region.code,
       name: region.name,
-      data: Object.values(newFoo)[0].flat(),
+      data: newFoo.flat(),
     });
     return acc;
   }, []);
 
   // Select one region with data similar to the actual endpoint
+  // Here, take region at index 0
   console.log(regionsData[0]);
 
   const plotData = Object.keys(droughtType).map((drought) => {
@@ -209,7 +209,7 @@ export const stackedAreaChartEndpoint = () => {
       text: droughtClass.map((ele) => ele.class),
       line: { color: '#fff' },
       textfont: { color: '#000' },
-      hovertemplate: '%{text}<br>%{x} - %{y:.2f}%' + '<extra></extra>',
+      hovertemplate: '%{text}<br>%{x} - %{y:.2f}% <extra></extra>',
     };
   });
 
