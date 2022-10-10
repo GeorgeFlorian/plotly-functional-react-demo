@@ -18,12 +18,14 @@ export function StackedAreaChart() {
   });
 
   useEffect(() => {
-    const plot = stackedAreaChartEndpoint();
-    console.log('plot', plot);
+    const { data, title } = stackedAreaChartEndpoint();
+    console.log('plot data', data);
+
+    const layout = { title: title };
 
     setChart((prevState) => ({
-      data: [...plot],
-      layout: { ...prevState.layout, ...plot.layout },
+      data: [...data],
+      layout: { ...prevState.layout, ...layout },
     }));
   }, [setChart]);
 

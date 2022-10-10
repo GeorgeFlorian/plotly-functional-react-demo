@@ -42,7 +42,7 @@ const DEFAULT_DATA = [
         showticksuffix: 'last',
       },
     },
-    branchvalues: 'total',
+    branchvalues: 'relative',
   },
 ];
 

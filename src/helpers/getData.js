@@ -21,43 +21,6 @@ const years = [
 //   return ((100 * partial) / total).toFixed(2);
 // }
 
-export const createSunburstChart = () => {
-  const sunburstChart = {
-    labels: [],
-    parents: [],
-    ids: [],
-    // values: [],
-  };
-
-  WORLD_SDG.forEach((region) => {
-    sunburstChart.labels.push(region.name);
-    sunburstChart.ids.push(region.name);
-    sunburstChart.parents.push('');
-    if (region.subregions.length > 0) {
-      region.subregions.forEach((sub) => {
-        sunburstChart.labels.push(sub.name);
-        sunburstChart.ids.push(sub.name);
-        sunburstChart.parents.push(region.name);
-        sub.countries.forEach((country) => {
-          sunburstChart.labels.push(country);
-          sunburstChart.ids.push(sub.name + ' - ' + country);
-          sunburstChart.parents.push(sub.name);
-        });
-      });
-    } else {
-      region.countries.forEach((country) => {
-        sunburstChart.labels.push(country);
-        sunburstChart.ids.push(region.name + ' - ' + country);
-        sunburstChart.parents.push(region.name);
-      });
-    }
-  });
-
-  console.table(sunburstChart);
-
-  return sunburstChart;
-};
-
 // BarChart Endpoint
 // /api/q1/region-degraded-land-percentage/
 // get only top level regions
@@ -187,11 +150,12 @@ export const stackedAreaChartEndpoint = () => {
 
   // Select one region with data similar to the actual endpoint
   // Here, take region at index 0
-  console.log(regionsData[0]);
+  const currentRegion = regionsData[0];
+  console.log('currentRegion', currentRegion);
 
   const plotData = Object.keys(droughtType).map((drought) => {
     // filter region data by drought class
-    const droughtClass = regionsData[0].data.filter(
+    const droughtClass = currentRegion.data.filter(
       (el) => el.class === droughtType[drought].name
     );
 
@@ -213,5 +177,133 @@ export const stackedAreaChartEndpoint = () => {
     };
   });
 
-  return plotData;
+  return { data: plotData, title: currentRegion.name };
+};
+
+const countryDegradedLand = () => {
+  const countriesData = [];
+  WORLD_SDG.forEach((region) => {
+    region.countries.forEach((country) => {
+      const countryISO3 = COUNTRY_CODES.find((el) => el.name === country).iso3;
+      if (COUNTRY_DATA[countryISO3]) {
+        const countryDegradedLandByYear = COUNTRY_DATA[countryISO3][
+          'so1-4'
+        ].t1.find((ele) => ele.id === 'baseline_period').degraded_area;
+        const countryTotalLandArea = COUNTRY_DATA[countryISO3]['so1-1'].t1.find(
+          (ele) => ele.year === '2015'
+        ).total_land_area;
+
+        const countryPercent = Number(
+          countryDegradedLandByYear / countryTotalLandArea
+        );
+        countriesData.push({
+          name: country,
+          iso3: countryISO3,
+          percentage: (countryPercent * 100).toFixed(2),
+        });
+      }
+    });
+  });
+  return countriesData;
+};
+
+const subRegionDegradedLand = () => {
+  const subregions = [];
+  WORLD_SDG.forEach((region) => {
+    if (region.subregions.length > 0) {
+      region.subregions.forEach((subregion) => {
+        let regionDegradedLand = 0;
+        let regionTotalLandArea = 0;
+        const subregionPercentage = subregion.countries.reduce(
+          (percentage, country) => {
+            const countryISO3 = COUNTRY_CODES.find(
+              (el) => el.name === country
+            ).iso3;
+            if (COUNTRY_DATA[countryISO3]) {
+              const countryDegradedLandByYear = COUNTRY_DATA[countryISO3][
+                'so1-4'
+              ].t1.find((ele) => ele.id === 'baseline_period').degraded_area;
+              const countryTotalLandArea = COUNTRY_DATA[countryISO3][
+                'so1-1'
+              ].t1.find((ele) => ele.year === '2015').total_land_area;
+
+              regionDegradedLand += Number(countryDegradedLandByYear);
+              regionTotalLandArea += Number(countryTotalLandArea);
+              percentage = regionDegradedLand / regionTotalLandArea;
+            }
+            return percentage;
+          },
+          0
+        );
+        subregions.push({
+          code: subregion.code,
+          name: subregion.name,
+          percentage: (subregionPercentage * 100).toFixed(2),
+        });
+      });
+    }
+  });
+  return subregions;
+};
+
+export const createSunburstChart = () => {
+  const regionsData = barChartEndpoint();
+  console.log('regionsData', regionsData);
+
+  const subregionsData = subRegionDegradedLand();
+  console.log('subregionsData', subregionsData);
+
+  let countriesData = countryDegradedLand();
+
+  // eliminate duplicate countries
+  countriesData = countriesData.filter(
+    (country, index, self) =>
+      index === self.findIndex((cty) => cty.name === country.name)
+  );
+  console.log('countriesData', countriesData);
+
+  const sunburstChart = {
+    labels: [],
+    parents: [],
+    ids: [],
+    values: [],
+  };
+
+  WORLD_SDG.forEach((region) => {
+    sunburstChart.labels.push(region.name);
+    sunburstChart.ids.push(region.name);
+    sunburstChart.parents.push('');
+    sunburstChart.values.push(
+      regionsData.find((el) => el.code === region.code).percentage
+    );
+    if (region.subregions.length > 0) {
+      region.subregions.forEach((sub) => {
+        sunburstChart.labels.push(sub.name);
+        sunburstChart.ids.push(sub.name);
+        sunburstChart.parents.push(region.name);
+        sunburstChart.values.push(
+          subregionsData.find((el) => el.code === sub.code).percentage
+        );
+        sub.countries.forEach((country) => {
+          sunburstChart.labels.push(country);
+          sunburstChart.ids.push(sub.name + ' - ' + country);
+          sunburstChart.parents.push(sub.name);
+          const foo = countriesData.find((el) => el.name === country);
+          sunburstChart.values.push(foo && foo.percentage);
+        });
+      });
+    } else {
+      region.countries.forEach((country) => {
+        sunburstChart.labels.push(country);
+        sunburstChart.ids.push(region.name + ' - ' + country);
+        sunburstChart.parents.push(region.name);
+        const foo = countriesData.find((el) => el.name === country);
+        sunburstChart.values.push(foo && foo.percentage);
+      });
+    }
+  });
+
+  // console.log(sunburstChart);
+
+  return sunburstChart;
 };

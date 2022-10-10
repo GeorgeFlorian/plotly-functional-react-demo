@@ -9,16 +9,7 @@ const DEFAULT_DATA = [
   {
     type: 'sunburst',
     sort: false,
-    // values: [
-    //   4, 5, 6, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    //   1,
-    // ],
-    // hovertemplate:
-    //   '%{parent} %{label} : %{value} <br>' +
-    //   ' %{entry} <br>' +
-    //   '<extra></extra>',
-    // texttemplate: `%{value} (%{percentEntry})`,
-    // hovertemplate: '%{label}<br />%{value} (%{percentRoot:%})<extra></extra>',
+    hovertemplate: '%{label}<br />%{value}% <extra></extra>',
     marker: {
       line: { width: 2 },
       cmin: 0,
@@ -42,7 +33,7 @@ const DEFAULT_DATA = [
         showticksuffix: 'last',
       },
     },
-    branchvalues: 'total',
+    branchvalues: 'relative',
   },
 ];
 

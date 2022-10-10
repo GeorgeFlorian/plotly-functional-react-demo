@@ -35,6 +35,7 @@ export function BarChart() {
       name: 'Percentage of degraded land',
       type: 'bar',
       marker: { color: '#000' },
+      hovertemplate: '%{x} - %{y:.2f}% <extra></extra>',
     };
     const nonDegradedLand = {
       x: [],
@@ -42,6 +43,7 @@ export function BarChart() {
       name: 'Percentage of non-degraded land',
       type: 'bar',
       marker: { color: '#FE7100' },
+      hovertemplate: '%{x} - %{y:.2f}% <extra></extra>',
     };
     myData.forEach((region) => {
       degradedLand.x.push(region.name.replaceAll(' ', '<br>'));

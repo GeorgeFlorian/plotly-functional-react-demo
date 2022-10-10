@@ -1,0 +1,10 @@
+{
+  "code": "62",
+  "name": "Central Asia (M49) and Southern Asia (MDG=M49)",
+  "data": [
+    { "year": "2000", "class": "Mild drought", "percentage": 20 },
+    { "year": "2000", "class": "Moderate drought", "percentage": 9 },
+    { "year": "2001", "class": "Mild drought", "percentage": 19 },
+    { "year": "2001", "class": "Moderate drought", "percentage": 8 }
+  ]
+}
