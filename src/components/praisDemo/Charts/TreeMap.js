@@ -2,23 +2,10 @@ import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import { createSunburstChart } from '../../../helpers/getData';
 
-// second plot with repeated labels
-// Regions -> Drought class -> countries
-
 const DEFAULT_DATA = [
   {
     type: 'treemap',
     sort: false,
-    // values: [
-    //   4, 5, 6, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-    //   1,
-    // ],
-    // hovertemplate:
-    //   '%{parent} %{label} : %{value} <br>' +
-    //   ' %{entry} <br>' +
-    //   '<extra></extra>',
-    // texttemplate: `%{value} (%{percentEntry})`,
-    // hovertemplate: '%{label}<br />%{value} (%{percentRoot:%})<extra></extra>',
     marker: {
       line: { width: 2 },
       cmin: 0,
@@ -37,7 +24,7 @@ const DEFAULT_DATA = [
         [1, '#e92210'],
       ],
       colorbar: {
-        title: 'Some rate',
+        title: 'Drought %',
         ticksuffix: '%',
         showticksuffix: 'last',
       },
@@ -50,6 +37,11 @@ export function TreeMap() {
   const [chart, setChart] = useState({
     data: DEFAULT_DATA,
     layout: {
+      title: {
+        text: 'Baseline Period (Year 2015)',
+        x: 0.5,
+        y: 1,
+      },
       showlegend: true,
       legend: {
         x: 0,
@@ -57,9 +49,9 @@ export function TreeMap() {
         orientation: 'h',
       },
       autosize: true,
-      margin: { l: 0, r: 0, b: 0, t: 0 },
+      margin: { l: 0, r: 0, b: 0, t: 20 },
       width: 900,
-      height: 800,
+      height: 700,
     },
     frames: [],
     config: { responive: true },
@@ -76,7 +68,6 @@ export function TreeMap() {
 
   const onUpdatePlot = () => {
     console.log('Plot Updated');
-    // console.log(chart.data);
   };
 
   return (

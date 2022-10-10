@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import { createSunburstChart } from '../../../helpers/getData';
 
-// second plot with repeated labels
-// Regions -> Drought class -> countries
-
 const DEFAULT_DATA = [
   {
+    title: 'Baseline Period (Year 2015)',
     type: 'sunburst',
     sort: false,
     hovertemplate: '%{label}<br />%{value}% <extra></extra>',
@@ -28,7 +26,7 @@ const DEFAULT_DATA = [
         [1, '#e92210'],
       ],
       colorbar: {
-        title: 'Some rate',
+        title: 'Drought %',
         ticksuffix: '%',
         showticksuffix: 'last',
       },
@@ -41,6 +39,11 @@ export function SunburstChart() {
   const [chart, setChart] = useState({
     data: DEFAULT_DATA,
     layout: {
+      title: {
+        text: 'Baseline Period (Year 2015)',
+        x: 0.5,
+        y: 1,
+      },
       showlegend: true,
       legend: {
         x: 0,
@@ -67,7 +70,6 @@ export function SunburstChart() {
 
   const onUpdatePlot = () => {
     console.log('Plot Updated');
-    // console.log(chart.data);
   };
 
   return (
