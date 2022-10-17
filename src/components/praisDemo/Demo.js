@@ -73,7 +73,7 @@ export default function PlotlyTutorial() {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: 600,
+            minHeight: 700,
           }}
         >
           {contentListNoTitle[activeTabKey]}

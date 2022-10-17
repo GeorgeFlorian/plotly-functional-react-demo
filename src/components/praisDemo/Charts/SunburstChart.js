@@ -4,7 +4,6 @@ import { createSunburstChart } from '../../../helpers/getData';
 
 const DEFAULT_DATA = [
   {
-    title: 'Baseline Period (Year 2015)',
     type: 'sunburst',
     sort: false,
     hovertemplate: '%{label}<br />%{value}% <extra></extra>',
@@ -32,6 +31,7 @@ const DEFAULT_DATA = [
       },
     },
     branchvalues: 'relative',
+    // maxdepth: 2,
   },
 ];
 
@@ -51,26 +51,66 @@ export function SunburstChart() {
         orientation: 'h',
       },
       autosize: true,
-      margin: { l: 0, r: 0, b: 0, t: 0 },
-      width: 900,
+      margin: { l: 0, r: 0, b: 0, t: 50 },
       height: 800,
     },
-    frames: [],
     config: { responive: true },
   });
 
   useEffect(() => {
-    const data = createSunburstChart();
+    const baseline = createSunburstChart('baseline_period', '2015');
+    const reporting = createSunburstChart('reporting_period', '2019');
+
+    const layout = {
+      sliders: [
+        {
+          x: 0.05,
+          pad: { b: 10 },
+          currentvalue: {
+            xanchor: 'right',
+            prefix: 'Period: ',
+            font: {
+              color: '#888',
+              size: 20,
+            },
+          },
+          steps: [
+            {
+              label: 'Baseline',
+              method: 'update',
+              args: [
+                {
+                  labels: [baseline.labels],
+                  parents: [baseline.parents],
+                  ids: [baseline.ids],
+                  values: [baseline.values],
+                },
+                { title: 'Baseline Period (Year 2015)' },
+              ],
+            },
+            {
+              label: 'Reporting',
+              method: 'update',
+              args: [
+                {
+                  labels: [reporting.labels],
+                  parents: [reporting.parents],
+                  ids: [reporting.ids],
+                  values: [reporting.values],
+                },
+                { title: 'Reporting Period (Year 2019)' },
+              ],
+            },
+          ],
+        },
+      ],
+    };
 
     setChart((prevState) => ({
-      data: [{ ...DEFAULT_DATA[0], ...data }],
-      layout: { ...prevState.layout },
+      data: [{ ...DEFAULT_DATA[0], ...baseline }],
+      layout: { ...prevState.layout, ...layout },
     }));
   }, []);
-
-  const onUpdatePlot = () => {
-    console.log('Plot Updated');
-  };
 
   return (
     <>
@@ -79,7 +119,6 @@ export function SunburstChart() {
         layout={chart.layout}
         config={chart.config}
         style={{ width: '100%', height: '100%' }}
-        onUpdate={onUpdatePlot}
         useResizeHandler
       />
     </>

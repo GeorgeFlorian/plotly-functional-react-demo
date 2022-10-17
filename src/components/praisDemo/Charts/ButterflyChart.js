@@ -159,8 +159,6 @@ export function ButterflyChart() {
       });
     }
 
-    // const traceColors =
-
     const firstFemaleTrace =
       frames[0].data[0].name === 'Women'
         ? frames[0].data[0]

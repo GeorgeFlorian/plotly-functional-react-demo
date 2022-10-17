@@ -207,8 +207,8 @@ export function GapminderChart() {
         ],
       };
 
-      console.log(traces);
-      console.log(frames);
+      // console.log(traces);
+      // console.log(frames);
 
       setChart((prevState) => ({
         ...prevState,
