@@ -22,7 +22,7 @@ export function ButterflyChart() {
       font: { size: 15 },
     },
     frames: [],
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {

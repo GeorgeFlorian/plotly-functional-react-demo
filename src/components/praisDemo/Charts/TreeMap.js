@@ -2,42 +2,40 @@ import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
 import { createSunburstChart } from '../../../helpers/getData';
 
-const DEFAULT_DATA = [
-  {
-    type: 'treemap',
-    sort: false,
-    hovertemplate: '%{label}<br />%{value}% <extra></extra>',
-    marker: {
-      line: { width: 2 },
-      cmin: 0,
-      cmax: 100,
-      colorscale: [
-        [0, '#19c8aa'],
-        [0.1, '#17ce4a'],
-        [0.2, '#8cd914'],
-        [0.3, '#dcdd13'],
-        [0.4, '#dfc813'],
-        [0.5, '#e0af12'],
-        [0.6, '#e29712'],
-        [0.7, '#e37e11'],
-        [0.8, '#e56411'],
-        [0.9, '#e64a11'],
-        [1, '#e92210'],
-      ],
-      colorbar: {
-        title: 'Drought %',
-        ticksuffix: '%',
-        showticksuffix: 'last',
-      },
-    },
-    branchvalues: 'relative',
-    // maxdepth: 2,
-  },
-];
-
 export function TreeMap() {
   const [chart, setChart] = useState({
-    data: DEFAULT_DATA,
+    data: [
+      {
+        type: 'treemap',
+        sort: false,
+        hovertemplate: '%{label}<br />%{value}% <extra></extra>',
+        marker: {
+          line: { width: 2 },
+          cmin: 0,
+          cmax: 100,
+          colorscale: [
+            [0, '#19c8aa'],
+            [0.1, '#17ce4a'],
+            [0.2, '#8cd914'],
+            [0.3, '#dcdd13'],
+            [0.4, '#dfc813'],
+            [0.5, '#e0af12'],
+            [0.6, '#e29712'],
+            [0.7, '#e37e11'],
+            [0.8, '#e56411'],
+            [0.9, '#e64a11'],
+            [1, '#e92210'],
+          ],
+          colorbar: {
+            title: 'Drought %',
+            ticksuffix: '%',
+            showticksuffix: 'last',
+          },
+        },
+        branchvalues: 'relative',
+        // maxdepth: 2,
+      },
+    ],
     layout: {
       title: {
         text: 'Baseline Period (Year 2015)',
@@ -54,7 +52,7 @@ export function TreeMap() {
       margin: { l: 0, r: 0, b: 0, t: 50 },
       height: 700,
     },
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {
@@ -85,7 +83,7 @@ export function TreeMap() {
                   ids: [baseline.ids],
                   values: [baseline.values],
                 },
-                { title: 'Baseline Period (Year 2015)' },
+                { title: 'Baseline Period (Year 2015)', height: 700 },
               ],
             },
             {
@@ -98,7 +96,7 @@ export function TreeMap() {
                   ids: [reporting.ids],
                   values: [reporting.values],
                 },
-                { title: 'Reporting Period (Year 2019)' },
+                { title: 'Reporting Period (Year 2019)', height: 700 },
               ],
             },
           ],
@@ -107,7 +105,7 @@ export function TreeMap() {
     };
 
     setChart((prevState) => ({
-      data: [{ ...DEFAULT_DATA[0], ...baseline }],
+      data: [{ ...prevState.data[0], ...baseline }],
       layout: { ...prevState.layout, ...layout },
     }));
   }, []);

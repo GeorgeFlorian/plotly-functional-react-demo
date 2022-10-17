@@ -42,7 +42,7 @@ export function BarChart() {
       showlegend: true,
       autosize: true,
     },
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {

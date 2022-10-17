@@ -15,7 +15,7 @@ export function GapminderChart() {
       // width: 1000,
     },
     frames: [],
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {

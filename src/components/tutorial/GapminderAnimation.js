@@ -10,7 +10,7 @@ export function GapminderAnimation() {
       autosize: true,
     },
     frames: [],
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {

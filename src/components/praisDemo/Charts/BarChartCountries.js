@@ -15,16 +15,11 @@ export function BarChartCountries() {
       autosize: true,
       barmode: 'stack',
       xaxis: { autorange: true, type: 'linear' },
-      yaxis: {
-        autorange: true,
-        type: 'category',
-        dtick: 1,
-      },
+      yaxis: { autorange: true, type: 'category', dtick: 1 },
       height: 1000,
-      xanchor: 'center',
       bargap: 0.3,
     },
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {
@@ -127,7 +122,10 @@ export function BarChartCountries() {
                     '%{y} - %{x:.2f}% <extra></extra>',
                   ],
                 },
-                { title: `Baseline Period (2015)<br>${EXAMPLE_REGION}` },
+                {
+                  title: `Baseline Period (2015)<br>${EXAMPLE_REGION}`,
+                  height: 1000,
+                },
               ],
             },
             {
@@ -148,7 +146,10 @@ export function BarChartCountries() {
                     '%{y} - %{x:.2f}% <extra></extra>',
                   ],
                 },
-                { title: `Reporting Period (2019)<br>${EXAMPLE_REGION}` },
+                {
+                  title: `Reporting Period (2019)<br>${EXAMPLE_REGION}`,
+                  height: 1000,
+                },
               ],
             },
           ],

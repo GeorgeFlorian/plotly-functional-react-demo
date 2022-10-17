@@ -17,7 +17,7 @@ export function PieChart() {
       },
       legend: { x: 1.1, y: 0.5 },
     },
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {

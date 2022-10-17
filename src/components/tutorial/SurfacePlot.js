@@ -13,7 +13,7 @@ export function SurfacePlot() {
       showlegend: false,
       autosize: true,
     },
-    config: { responive: true },
+    config: { responsive: true },
   });
 
   useEffect(() => {
