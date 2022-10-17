@@ -24,7 +24,6 @@ export function BarChartCountries() {
       xanchor: 'center',
       bargap: 0.3,
     },
-    frames: [],
     config: { responive: true },
   });
 

@@ -15,7 +15,6 @@ export function BarChartRegions() {
       xaxis: { autorange: true, type: 'category', tickangle: 0 },
       yaxis: { autorange: true, type: 'linear' },
     },
-    frames: [],
     config: { responive: true },
   });
 

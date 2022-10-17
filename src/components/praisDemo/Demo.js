@@ -55,7 +55,7 @@ const contentListNoTitle = {
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('barChartCountries');
+  const [activeTabKey, setActiveTabKey] = useState('treeMap');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);

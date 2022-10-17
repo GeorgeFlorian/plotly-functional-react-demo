@@ -13,7 +13,6 @@ export function SurfacePlot() {
       showlegend: false,
       autosize: true,
     },
-    frames: [],
     config: { responive: true },
   });
 

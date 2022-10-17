@@ -42,7 +42,6 @@ export function BarChart() {
       showlegend: true,
       autosize: true,
     },
-    frames: [],
     config: { responive: true },
   });
 

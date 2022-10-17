@@ -13,7 +13,6 @@ export function StackedAreaChart() {
       // plot_bgcolor: '#c7c7c7',
       // paper_bgcolor: '#c7c7c7',
     },
-    frames: [],
     config: { responive: true },
   });
 

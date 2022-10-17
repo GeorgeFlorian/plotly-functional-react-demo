@@ -17,7 +17,6 @@ export function PieChart() {
       },
       legend: { x: 1.1, y: 0.5 },
     },
-    frames: [],
     config: { responive: true },
   });
 

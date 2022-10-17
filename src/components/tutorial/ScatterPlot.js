@@ -9,7 +9,6 @@ export function ScatterPlot() {
       showlegend: false,
       autosize: true,
     },
-    frames: [],
     config: { responive: true },
   });
 
