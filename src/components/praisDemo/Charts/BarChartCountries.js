@@ -3,17 +3,26 @@ import Plot from 'react-plotly.js';
 
 import { barChartEndpoint } from '../../../helpers/getData';
 
-export function BarChart() {
+const EXAMPLE_REGION = 'Northern America (M49) and Europe (M49)';
+
+export function BarChartCountries() {
   const [chart, setChart] = useState({
     data: [],
     layout: {
       title: 'Baseline Period (Year 2015)',
       showlegend: true,
-      margin: { pad: 10 },
+      margin: { pad: 10, l: 300 },
       autosize: true,
       barmode: 'stack',
-      xaxis: { autorange: true, type: 'category', tickangle: 0 },
-      yaxis: { autorange: true, type: 'linear' },
+      xaxis: { autorange: true, type: 'linear' },
+      yaxis: {
+        autorange: true,
+        type: 'category',
+        dtick: 1,
+      },
+      height: 1000,
+      xanchor: 'center',
+      bargap: 0.3,
     },
     frames: [],
     config: { responive: true },
@@ -23,68 +32,11 @@ export function BarChart() {
     // get Percentage of degraded land in each region
     // Percentage non-degraded land = 100 - Percentage of degraded land in each region
 
-    // console.log(regions);
-    // const { countries } = data;
-    // console.log(countries);
-
-    // const region = event.points[0].x.replaceAll('<br>', ' ').trim();
-    // console.log(region);
-
-    // const degradedLand = {
-    //   x: [],
-    //   y: [],
-    //   name: 'Percentage of degraded land',
-    //   type: 'bar',
-    //   marker: { color: '#000' },
-    //   hovertemplate: '%{y} - %{x:.2f}% <extra></extra>',
-    //   orientation: 'h',
-    // };
-
-    // const nonDegradedLand = {
-    //   x: [],
-    //   y: [],
-    //   name: 'Percentage of non-degraded land',
-    //   type: 'bar',
-    //   marker: { color: '#FE7100' },
-    //   hovertemplate: '%{y} - %{x:.2f}% <extra></extra>',
-    //   orientation: 'h',
-    // };
-
-    // countries[region].forEach((country) => {
-    //   const percentage = Number(
-    //     +country.degraded_area / +country.total_area
-    //   ).toFixed(2);
-    //   degradedLand.y.push(country.name);
-    //   degradedLand.x.push(Number(percentage));
-    //   nonDegradedLand.y.push(country.name);
-    //   nonDegradedLand.x.push(100 - Number(percentage));
-    // });
-
-    // const layout = {
-    //   title: region,
-    //   xaxis: { autorange: true, type: 'linear' },
-    //   yaxis: {
-    //     autorange: true,
-    //     type: 'category',
-    //     dtick: 1,
-    //   },
-    //   height: 1000,
-    //   xanchor: 'center',
-    //   margin: { l: 300 },
-    //   bargap: 0.3,
-    // };
-
-    // setChart((prevState) => ({
-    //   ...prevState,
-    //   data: [nonDegradedLand, degradedLand],
-    //   layout: {
-    //     ...prevState.layout,
-    //     ...layout,
-    //   },
-    // }));
-
     const baselinePeriodData = barChartEndpoint('baseline_period', '2015');
     const reportingPeriodData = barChartEndpoint('reporting_period', '2019');
+
+    const baselineCountries = baselinePeriodData.countries[EXAMPLE_REGION];
+    const reportingCountries = reportingPeriodData.countries[EXAMPLE_REGION];
 
     const degradedLandBaseline = {
       x: [],
@@ -92,7 +44,8 @@ export function BarChart() {
       name: 'Percentage of<br>degraded land',
       type: 'bar',
       marker: { color: '#000' },
-      hovertemplate: '%{x} - %{y:.2f}% <extra></extra>',
+      hovertemplate: '%{y} - %{x:.2f}% <extra></extra>',
+      orientation: 'h',
     };
     const nonDegradedLandBaseline = {
       x: [],
@@ -100,15 +53,18 @@ export function BarChart() {
       name: 'Percentage of<br>non-degraded land',
       type: 'bar',
       marker: { color: '#FE7100' },
-      hovertemplate: '%{x} - %{y:.2f}% <extra></extra>',
+      hovertemplate: '%{y} - %{x:.2f}% <extra></extra>',
+      orientation: 'h',
     };
+
     const degradedLandReporting = {
       x: [],
       y: [],
       name: 'Percentage of<br>degraded land',
       type: 'bar',
       marker: { color: '#000' },
-      hovertemplate: '%{x} - %{y:.2f}% <extra></extra>',
+      hovertemplate: '%{y} - %{x:.2f}% <extra></extra>',
+      orientation: 'h',
     };
     const nonDegradedLandReporting = {
       x: [],
@@ -116,28 +72,35 @@ export function BarChart() {
       name: 'Percentage of<br>non-degraded land',
       type: 'bar',
       marker: { color: '#FE7100' },
-      hovertemplate: '%{x} - %{y:.2f}% <extra></extra>',
+      hovertemplate: '%{y} - %{x:.2f}% <extra></extra>',
+      orientation: 'h',
     };
 
-    baselinePeriodData.regions.forEach((region) => {
-      degradedLandBaseline.x.push(region.name.replaceAll(' ', '<br>'));
-      degradedLandBaseline.y.push(Number(region.percentage));
-      nonDegradedLandBaseline.x.push(region.name.replaceAll(' ', '<br>'));
-      nonDegradedLandBaseline.y.push(100 - Number(region.percentage));
+    baselineCountries.forEach((country) => {
+      const percentage = Number(
+        +country.degraded_area / +country.total_area
+      ).toFixed(2);
+      degradedLandBaseline.y.push(country.name);
+      degradedLandBaseline.x.push(Number(percentage));
+      nonDegradedLandBaseline.y.push(country.name);
+      nonDegradedLandBaseline.x.push(100 - Number(percentage));
     });
 
-    reportingPeriodData.regions.forEach((region) => {
-      degradedLandReporting.x.push(region.name.replaceAll(' ', '<br>'));
-      degradedLandReporting.y.push(Number(region.percentage));
-      nonDegradedLandReporting.x.push(region.name.replaceAll(' ', '<br>'));
-      nonDegradedLandReporting.y.push(100 - Number(region.percentage));
+    reportingCountries.forEach((country) => {
+      const percentage = Number(
+        +country.degraded_area / +country.total_area
+      ).toFixed(2);
+      degradedLandReporting.y.push(country.name);
+      degradedLandReporting.x.push(Number(percentage));
+      nonDegradedLandReporting.y.push(country.name);
+      nonDegradedLandReporting.x.push(100 - Number(percentage));
     });
 
     const layout = {
+      title: `Baseline Period (2015)<br>${EXAMPLE_REGION}`,
       sliders: [
         {
-          y: -0.4,
-          // pad: { t: 100 },
+          y: -0.05,
           currentvalue: {
             xanchor: 'right',
             prefix: 'Period: ',
@@ -161,11 +124,11 @@ export function BarChart() {
                   type: ['bar', 'bar'],
                   marker: [{ color: '#FE7100' }, { color: '#000' }],
                   hovertemplate: [
-                    '%{x} - %{y:.2f}% <extra></extra>',
-                    '%{x} - %{y:.2f}% <extra></extra>',
+                    '%{y} - %{x:.2f}% <extra></extra>',
+                    '%{y} - %{x:.2f}% <extra></extra>',
                   ],
                 },
-                { title: 'Baseline Period (2015)' },
+                { title: `Baseline Period (2015)<br>${EXAMPLE_REGION}` },
               ],
             },
             {
@@ -182,11 +145,11 @@ export function BarChart() {
                   type: ['bar', 'bar'],
                   marker: [{ color: '#FE7100' }, { color: '#000' }],
                   hovertemplate: [
-                    '%{x} - %{y:.2f}% <extra></extra>',
-                    '%{x} - %{y:.2f}% <extra></extra>',
+                    '%{y} - %{x:.2f}% <extra></extra>',
+                    '%{y} - %{x:.2f}% <extra></extra>',
                   ],
                 },
-                { title: 'Reporting Period (2019)' },
+                { title: `Reporting Period (2019)<br>${EXAMPLE_REGION}` },
               ],
             },
           ],

@@ -4,7 +4,8 @@ import { useState } from 'react';
 import classes from './Demo.module.css';
 
 import {
-  BarChart,
+  BarChartRegions,
+  BarChartCountries,
   GapminderChart,
   StackedAreaChart,
   ButterflyChart,
@@ -14,8 +15,12 @@ import {
 
 const tabListNoTitle = [
   {
-    key: 'barChart',
-    tab: 'Bar Chart',
+    key: 'barChartRegions',
+    tab: 'Bar Chart Regions',
+  },
+  {
+    key: 'barChartCountries',
+    tab: 'Bar Chart Countries',
   },
   {
     key: 'stackedAreaChart',
@@ -40,7 +45,8 @@ const tabListNoTitle = [
 ];
 
 const contentListNoTitle = {
-  barChart: <BarChart />,
+  barChartRegions: <BarChartRegions />,
+  barChartCountries: <BarChartCountries />,
   stackedAreaChart: <StackedAreaChart />,
   gapminderChart: <GapminderChart />,
   butterflyChart: <ButterflyChart />,
@@ -49,7 +55,7 @@ const contentListNoTitle = {
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('sunburst');
+  const [activeTabKey, setActiveTabKey] = useState('barChartCountries');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);
