@@ -105,7 +105,7 @@ export const barChartEndpoint = (period, year) => {
   return { regions, countries };
 };
 
-export const stackedAreaChartEndpoint = () => {
+export const stackedAreaChartEndpoint = (whatRegion) => {
   const droughtType = {
     non_drought: { name: 'Non Drought', color: '#a6ee4a' },
     mild_drought: { name: 'Mild Drought', color: '#eee44a' },
@@ -190,35 +190,10 @@ export const stackedAreaChartEndpoint = () => {
   }, []);
 
   // Select one region with data similar to the actual endpoint
-  // Here, take region at index 0
-  const currentRegion = regionsData[0];
+  const currentRegion = regionsData.find((el) => el.name === whatRegion);
   console.log('currentRegion', currentRegion);
 
-  const plotData = Object.keys(droughtType).map((drought) => {
-    // filter region data by drought class
-    const droughtClass = currentRegion.data.filter(
-      (el) => el.class === droughtType[drought].name
-    );
-
-    return {
-      x: droughtClass.map((ele) => ele.year),
-      y: droughtClass.map((ele) => Number(ele.percentage * 100).toFixed(2)),
-      stackgroup: 'one',
-      // setting norm to percent normalizes the values relative to 100%
-      // but the values do not add up to 100
-      // so the percentages get altered so that they add up to 100
-      groupnorm: 'percent',
-      name: droughtType[drought].name,
-      fillcolor: droughtType[drought].color,
-
-      text: droughtClass.map((ele) => ele.class),
-      line: { color: '#fff' },
-      textfont: { color: '#000' },
-      hovertemplate: '%{text}<br>%{x} - %{y:.2f}% <extra></extra>',
-    };
-  });
-
-  return { data: plotData, title: currentRegion.name };
+  return currentRegion;
 };
 
 const countryDegradedLand = (period, year) => {

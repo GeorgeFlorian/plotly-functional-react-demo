@@ -111,14 +111,12 @@ export function SunburstChart() {
   }, []);
 
   return (
-    <>
-      <Plot
-        data={chart.data}
-        layout={chart.layout}
-        config={chart.config}
-        style={{ width: '100%', height: '100%' }}
-        useResizeHandler
-      />
-    </>
+    <Plot
+      data={chart.data}
+      layout={chart.layout}
+      config={chart.config}
+      style={{ width: '100%', height: '100%' }}
+      useResizeHandler
+    />
   );
 }
