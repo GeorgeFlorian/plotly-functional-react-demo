@@ -10,8 +10,26 @@ const sumAllObjectValues = (obj) => {
 };
 
 const years = [
-  2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012,
-  2013, 2014, 2015, 2016, 2017, 2018, 2019,
+  '2000',
+  '2001',
+  '2002',
+  '2003',
+  '2004',
+  '2005',
+  '2006',
+  '2007',
+  '2008',
+  '2009',
+  '2010',
+  '2011',
+  '2012',
+  '2013',
+  '2014',
+  '2015',
+  '2016',
+  '2017',
+  '2018',
+  '2019',
 ];
 
 // function percentage(partialValue, totalValue) {
@@ -37,7 +55,9 @@ export const barChartEndpoint = (period, year) => {
     ...WORLD_SDG.reduce((acc, region) => {
       let regionDegradedLand = 0;
       let regionTotalLandArea = 0;
+
       countries[region.name] = [];
+
       const percentageDegradedLandByRegion = region.countries.reduce(
         (regionPercentage, country) => {
           const countryISO3 = COUNTRY_CODES.find(
@@ -328,4 +348,169 @@ export const createSunburstChart = (period, year) => {
   // console.log(sunburstChart);
 
   return sunburstChart;
+};
+
+export const gapminderEndpoint = () => {
+  const regions = [];
+  const countries = [];
+
+  // [
+  //   {"region_name": "Africa", "year": 2000, "population": 2000, "population_drought_percentage": 23, "land_drought_percentage": 26},
+  //   {"region_name": "Asia", "year": 2000, "population": 3000, "population_drought_percentage": 15, "land_drought_percentage": 14}
+  // ]
+  // Add regions
+  regions.push(
+    ...WORLD_SDG.reduce((acc, region) => {
+      let regionDegradedLand = 0;
+      let regionTotalLandArea = 0;
+
+      let regionDroughtPopulation = 0;
+      let regionPopulation = 0;
+
+      years.forEach((year) => {
+        const percentageDegradedLandByRegion = region.countries.reduce(
+          (regionPercentage, country) => {
+            const countryISO3 = COUNTRY_CODES.find(
+              (el) => el.name === country
+            ).iso3;
+            if (COUNTRY_DATA[countryISO3]) {
+              // calculate land
+              const { total_area_under_drought } = COUNTRY_DATA[countryISO3][
+                'so3-1'
+              ].t2.find((el) => el.year === year);
+              const { non_drought } = COUNTRY_DATA[countryISO3][
+                'so3-1'
+              ].t1.find((el) => el.year === year);
+              const totalLandArea = +total_area_under_drought + +non_drought;
+              // calculate population
+              const populationData = COUNTRY_DATA[countryISO3]['so3-2'].t1.find(
+                (el) => el.year === year
+              );
+              const {
+                year: sameYear,
+                non_drought_population_count,
+                ...populationDrought
+              } = populationData;
+
+              const totalPopulation = sumAllObjectValues({
+                non_drought_population_count,
+                ...populationDrought,
+              });
+              const populationAffectedByDrought =
+                +totalPopulation - +non_drought_population_count;
+              // Add countries
+              countries.push({
+                iso3: countryISO3,
+                name: country,
+                region: region.name,
+                year,
+                population: +totalPopulation,
+                population_drought_percentage: (
+                  (+populationAffectedByDrought / +totalPopulation) *
+                  100
+                ).toFixed(2),
+                land_drought_percentage: (
+                  (+total_area_under_drought / +totalLandArea) *
+                  100
+                ).toFixed(2),
+              });
+
+              // calculate land drought percentage
+              regionDegradedLand += Number(total_area_under_drought);
+              regionTotalLandArea += Number(totalLandArea);
+              // calculate people drought percentage
+              regionDroughtPopulation += Number(populationAffectedByDrought);
+              regionPopulation += Number(totalPopulation);
+            }
+
+            regionPercentage.land_drought_percentage =
+              regionDegradedLand / regionTotalLandArea;
+            regionPercentage.population_drought_percentage =
+              regionDroughtPopulation / regionPopulation;
+
+            return regionPercentage;
+          },
+          { population_drought_percentage: 0, land_drought_percentage: 0 }
+        );
+
+        acc.push({
+          year,
+          region_name: region.name,
+          population_drought_percentage: (
+            percentageDegradedLandByRegion.population_drought_percentage * 100
+          ).toFixed(2),
+          land_drought_percentage: (
+            percentageDegradedLandByRegion.land_drought_percentage * 100
+          ).toFixed(2),
+        });
+      });
+
+      return acc;
+    }, [])
+  );
+
+  return { regions, countries };
+};
+
+export const anotherGapminderEndpoint = () => {
+  const countries = [];
+
+  WORLD_SDG.forEach((region) => {
+    years.forEach((year) => {
+      region.countries.forEach((country) => {
+        const countryISO3 = COUNTRY_CODES.find(
+          (el) => el.name === country
+        ).iso3;
+        if (COUNTRY_DATA[countryISO3]) {
+          // calculate land
+          const { total_area_under_drought } = COUNTRY_DATA[countryISO3][
+            'so3-1'
+          ].t2.find((el) => el.year === year);
+          const { non_drought } = COUNTRY_DATA[countryISO3]['so3-1'].t1.find(
+            (el) => el.year === year
+          );
+          const totalLandArea = +total_area_under_drought + +non_drought;
+          // calculate population
+          const populationData = COUNTRY_DATA[countryISO3]['so3-2'].t1.find(
+            (el) => el.year === year
+          );
+          const {
+            year: sameYear,
+            non_drought_population_count,
+            ...populationDrought
+          } = populationData;
+
+          const totalPopulation = sumAllObjectValues({
+            non_drought_population_count,
+            ...populationDrought,
+          });
+          const populationAffectedByDrought =
+            +totalPopulation - +non_drought_population_count;
+          // Add countries
+          countries.push({
+            iso3: countryISO3,
+            name: country,
+            region: region.name,
+            year,
+            population: +totalPopulation,
+            population_drought_percentage: (
+              (+populationAffectedByDrought / +totalPopulation) *
+              100
+            ).toFixed(2),
+            land_drought_percentage: (
+              (+total_area_under_drought / +totalLandArea) *
+              100
+            ).toFixed(2),
+          });
+        }
+      });
+    });
+  });
+
+  // countries = countries.filter(
+  //   (value, index, self) =>
+  //     index === self.findIndex((el) => el.name === value.name)
+  // );
+
+  return countries;
 };

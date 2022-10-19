@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Plot from 'react-plotly.js';
-import { gapminderChart } from '../../../helpers/fooData';
+import { anotherGapminderEndpoint } from '../../../helpers/getData';
 
 // To add custom hovertemplate for bubbles
 // https://plotly.com/javascript/hover-text-and-formatting/
@@ -11,26 +11,27 @@ export function GapminderChart() {
     layout: {
       showlegend: true,
       autosize: true,
-      height: 600,
-      // width: 1000,
+      height: 1000,
+      width: 1500,
     },
     frames: [],
     config: { responsive: true },
   });
 
   useEffect(() => {
-    // so1-1 t1 total_land_area
-    // Percentage of land area affected by drought =
-    // = Compute min/max % of affected land (so31-t2/so1-1t1).
-    // = so1-1 t1 total_country_area % so3-1 t2 total_area_under_drought
-
     const getCSV = async () => {
-      // const csvData = await d3.csv(
-      //   'https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv'
-      // );
-      // console.log('csvData', csvData);
+      // console.log(anotherGapminderEndpoint());
 
-      const myData = gapminderChart();
+      // const myData = gapminderEndpoint().countries;
+      const myData = anotherGapminderEndpoint();
+
+      // const myData = anotherGapminderEndpoint().filter(
+      //   (country) =>
+      //     country.region === 'Landlocked developing countries (LLDCs)' ||
+      //     country.region === `Central Asia (M49) and Southern Asia (MDG=M49)`
+      // );
+
+      console.log(myData);
 
       // Create a lookup table to sort and regroup the columns of data,
       // first by year, then by group:
@@ -50,6 +51,7 @@ export function GapminderChart() {
             id: [],
             text: [],
             marker: { size: [] },
+            hovertemplate: '',
           };
         }
         return trace;
@@ -58,14 +60,14 @@ export function GapminderChart() {
       // Go through each row, get the right trace, and append the data:
       for (let i = 0; i < myData.length; i++) {
         const datum = myData[i];
-        const trace = getData(datum.year, datum.group);
+        const trace = getData(datum.year, datum.region);
         // console.log('trace', trace);
-        trace.text.push(datum.country);
-        trace.id.push(datum.country);
+        trace.text.push(datum.name);
+        trace.id.push(datum.name);
         trace.x.push(datum.land_drought_percentage);
         trace.y.push(datum.population_drought_percentage);
-        trace.marker.size.push(datum.pop);
-        // console.log(trace);
+        trace.marker.size.push(datum.population);
+        trace.hovertemplate = '%{y} - %{x:.2f}% <extra></extra>';
       }
 
       // Get the group names:
@@ -96,6 +98,11 @@ export function GapminderChart() {
             sizemode: 'area',
             sizeref: 200000,
           },
+          hovertemplate:
+            '%{text}<br>' +
+            'Land affected by drought: %{x:.2f}%<br>' +
+            'Population affected by drought: %{y:.2f}%' +
+            '<extra></extra>',
         });
       }
 
@@ -111,7 +118,7 @@ export function GapminderChart() {
             return getData(years[i], group);
           }),
         });
-        console.log(frames[i].data);
+        // console.log(frames[i].data);
       }
 
       // Now create slider steps, one for each frame. The slider

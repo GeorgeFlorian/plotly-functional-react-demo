@@ -55,7 +55,7 @@ const contentListNoTitle = {
 };
 
 export default function PlotlyTutorial() {
-  const [activeTabKey, setActiveTabKey] = useState('barChartCountries');
+  const [activeTabKey, setActiveTabKey] = useState('gapminderChart');
 
   const onTabChange = (key) => {
     setActiveTabKey(key);
@@ -80,6 +80,7 @@ export default function PlotlyTutorial() {
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: 700,
+            minWidth: 800,
           }}
         >
           {contentListNoTitle[activeTabKey]}
